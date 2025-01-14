@@ -1,37 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menna Elwan's Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+   <!--=============== FAVICON ===============-->
+   <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
+
+   <!--=============== REMIXICONS ===============-->
+   <link href="https://cdn.jsdelivr.net/npm/remixicon@3.0.0/fonts/remixicon.css" rel="stylesheet">
+
+   <!--=============== CSS ===============-->
+   <link rel="stylesheet" href="assets/css/styles.css">
+
+   <title>Portfolio - Menna Elwan</title>
 </head>
 <body>
-    <header>
-        <h1>Welcome to My Portfolio</h1>
-        <p>Mobile Developer | Cross-Platform Expert</p>
-    </header>
-    <section id="projects">
-        <h2>Projects</h2>
-        <div class="project">
-            <h3>Fashion App</h3>
-            <p>A Flutter-based application integrating APIs, focused on user-friendly interfaces for fashion lovers.</p>
-            <a href="https://github.com/menna3lwan/fashion-app">View on GitHub</a>
-        </div>
-        <div class="project">
+   <!--==================== HEADER ====================-->
+   <header class="header" id="header">
+      <nav>
+         <h1>Menna Elwan</h1>
+         <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+         </ul>
+      </nav>
+   </header>
+
+   <!--==================== MAIN ====================-->
+   <main class="main">
+      <!--==================== HOME ====================-->
+      <section class="home section" id="home">
+         <div class="home-content">
+            <h2>Welcome to My Portfolio</h2>
+            <p>Hi, I'm Menna Elwan, a passionate software developer specializing in mobile and web application development.</p>
+         </div>
+      </section>
+
+      <!--==================== ABOUT ====================-->
+      <section class="about section" id="about">
+         <h2>About Me</h2>
+         <p>I am a skilled software developer with expertise in React Native, Flutter, and Firebase. I have a strong background in designing and developing intuitive user experiences.</p>
+      </section>
+
+      <!--==================== SKILLS ====================-->
+      <section class="skills section" id="skills">
+         <h2>Skills</h2>
+         <ul>
+            <li>React Native</li>
+            <li>Flutter</li>
+            <li>Firebase</li>
+            <li>UI/UX Design</li>
+         </ul>
+      </section>
+
+      <!--==================== PROJECTS ====================-->
+      <section class="projects section" id="projects">
+         <h2>Projects</h2>
+         <div class="project">
             <h3>News App</h3>
-            <p>An Android (Kotlin)-based app with Firebase for real-time updates, delivering the latest news efficiently.</p>
-            <a href="https://github.com/menna3lwan/news-app">View on GitHub</a>
-        </div>
-        <div class="project">
-            <h3>Todo App</h3>
-            <p>A Flutter-based productivity tool with API integration for seamless task management.</p>
-            <a href="https://github.com/menna3lwan/todo-app">View on GitHub</a>
-        </div>
-        <!-- Add more projects similarly -->
-    </section>
-    <footer>
-        <p>© 2025 Menna Maher Elwan | <a href="https://www.linkedin.com/in/menna-elwan-13572b251/" target="_blank" style="color: #fff;">LinkedIn</a> | <a href="https://github.com/menna3lwan" target="_blank" style="color: #fff;">GitHub</a></p>
-    </footer>
+            <p>A cross-platform mobile application that delivers real-time news updates using React Native and Firebase.</p>
+         </div>
+         <!-- Add more projects here -->
+      </section>
+
+      <!--==================== CONTACT ====================-->
+      <section class="contact section" id="contact">
+         <h2>Contact</h2>
+         <p>Feel free to reach out to me:</p>
+         <ul>
+            <li>Email: menna.elwan@example.com</li>
+            <li>LinkedIn: <a href="https://linkedin.com/in/mennaelwan">linkedin.com/in/mennaelwan</a></li>
+         </ul>
+      </section>
+   </main>
+
+   <!--==================== FOOTER ====================-->
+   <footer class="footer">
+      <p>&copy; 2025 Menna Elwan</p>
+   </footer>
+
+   <!--=============== MAIN JS ===============-->
+   <script src="assets/js/main.js"></script>
 </body>
 </html>
