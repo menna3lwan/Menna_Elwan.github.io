@@ -55,6 +55,13 @@
             font-family: 'Space Mono', monospace;
             border-top: 1px solid #ddd;
             border-bottom: 1px solid #ddd;
+            cursor: pointer; /* Indicates the section is clickable */
+            transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
+        }
+
+        #fh5co-about.clicked {
+            transform: scale(1.02); /* Slightly enlarge on click */
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); /* Add shadow on click */
         }
 
         #fh5co-about h2 {
@@ -250,6 +257,15 @@
         integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrLr8R9clIILTHQs7Uflr2B0BMXAX9lxHUrZh6OuvQ=="
         crossorigin=""></script>
         <script src="js/main.js"></script>
+
+        <!-- Add this script for click animation -->
+        <script>
+            $(document).ready(function() {
+                $('#fh5co-about').click(function() {
+                    $(this).toggleClass('clicked'); // Toggle the 'clicked' class
+                });
+            });
+        </script>
     </div>
 </body>
 
