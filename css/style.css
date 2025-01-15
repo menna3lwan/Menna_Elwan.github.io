@@ -202,7 +202,7 @@ h1, h2, h3, h4, h5, h6, figure {
     }
 }
 
-/* Expanded Profile Image Area */
+/* Expanded Profile Image Area with Scale and Move Up */
 #fh5co-header .display-tc .profile-thumb,
 .fh5co-cover .display-tc .profile-thumb {
     background-size: cover !important;
@@ -216,6 +216,7 @@ h1, h2, h3, h4, h5, h6, figure {
     border-radius: 50%; /* Circular image */
     border: 8px solid #fff; /* Thicker border */
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3); /* Enhanced shadow */
+    transform: scale(1.1) translateY(-20px); /* Scale up and move up */
 }
 
 #fh5co-header .display-tc .fh5co-social-icons li a,
