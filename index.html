@@ -176,6 +176,48 @@
             background-color: #e67e22; /* Darker orange on hover */
             transform: translateY(-3px);
         }
+
+        /* Animated text for Work With Me section */
+        .cd-words-wrapper {
+            display: inline-block;
+            position: relative;
+            text-align: left;
+        }
+
+        .cd-words-wrapper b {
+            display: inline-block;
+            position: absolute;
+            white-space: nowrap;
+            left: 0;
+            top: 0;
+        }
+
+        .cd-words-wrapper b.is-visible {
+            position: relative;
+        }
+
+        .cd-headline.clip .cd-words-wrapper {
+            overflow: hidden;
+            vertical-align: top;
+        }
+
+        .cd-headline.clip .cd-words-wrapper::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 2px;
+            height: 100%;
+            background-color: #fff;
+        }
+
+        .cd-headline.clip b {
+            opacity: 0;
+        }
+
+        .cd-headline.clip b.is-visible {
+            opacity: 1;
+        }
     </style>
 </head>
 
@@ -267,7 +309,12 @@
                     <div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
                         <h2>Work With Me</h2>
                         <p>
-                            Let's bring your ideas to life with innovative and efficient mobile app solutions. Whether you’re looking for a complete app design, optimization of your current project, or backend integrations, I’m here to help. Let’s collaborate and create something remarkable together.
+                            <span class="cd-headline clip is-full-width">
+                                <span class="cd-words-wrapper">
+                                    <b class="is-visible">Let's bring your ideas to life with innovative and efficient mobile app solutions. Whether you’re looking for a complete app design, optimization of your current project, or backend integrations, I’m here to help. Let’s collaborate and create something remarkable together.</b>
+                                    <b>With a passion for innovation and a focus on efficiency, I specialize in delivering top-notch mobile app solutions tailored to your needs. Whether you’re starting from scratch with a complete app design, optimizing an existing project, or integrating advanced backend systems, I’m here to make it happen.</b>
+                                </span>
+                            </span>
                         </p>
                         <p>
                             <a href="https://docs.google.com/document/d/e/2PACX-1vSXK6i8ydfJuDxqoYrL8DVANDnPfCmcoWEK8AzRWKVeDcjGe0bcyoVSGk9JVFGlTVPH24ncjF0gThhn/pub" class="btn btn-default btn-lg">Download My CV</a>
