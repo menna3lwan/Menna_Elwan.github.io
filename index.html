@@ -127,7 +127,14 @@
             position:absolute;width:3px;height:3px;background:var(--orange);border-radius:50%;
             opacity:0;animation:floatUp linear infinite;
         }
-        [data-theme="light"] .particle { opacity:0 !important; }
+        [data-theme="light"] .particle { background:var(--orange); animation-name:floatUpLight; }
+        [data-theme="eye-comfort"] .particle { background:var(--orange); }
+        @keyframes floatUpLight{
+            0%{transform:translateY(100vh) scale(0);opacity:0}
+            10%{opacity:.3}
+            90%{opacity:.3}
+            100%{transform:translateY(-10vh) scale(1);opacity:0}
+        }
         @keyframes floatUp{
             0%{transform:translateY(100vh) scale(0);opacity:0}
             10%{opacity:.4}
@@ -225,7 +232,7 @@
         [data-theme="eye-comfort"] .photo-ring-2 { border-bottom-color:rgba(212,160,67,0.2); border-left-color:rgba(212,160,67,0.2) }
         @keyframes spinRing{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
         .hero-photo{
-            width:180px;height:180px;border-radius:50%;object-fit:cover;object-position:center top;
+            width:180px;height:180px;border-radius:50%;object-fit:cover;object-position:center center;
             border:4px solid var(--navy-light);
             box-shadow:0 0 40px rgba(255,144,0,0.15);
             display:block;position:relative;z-index:2;
