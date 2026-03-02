@@ -6,15 +6,6 @@
 
 <div align="center">
 
-## Flutter Developer | Mobile Application Engineer
-
-</div>
-
----
-
-<br>
-
-<div align="center">
 
 ## About Me
 
@@ -121,33 +112,6 @@ Supabase
 
 <div align="center">
 
-## Featured Projects
-
-</div>
-
-<br>
-
-<div align="center">
-
-<a href="https://github.com/menna3lwan/movie_app">
-  <img src="https://github-readme-stats.vercel.app/api/pin/?username=menna3lwan&repo=movie_app&theme=tokyonight&hide_border=true" />
-</a>
-
-<a href="https://github.com/menna3lwan/patient_app">
-  <img src="https://github-readme-stats.vercel.app/api/pin/?username=menna3lwan&repo=patient_app&theme=tokyonight&hide_border=true" />
-</a>
-
-<a href="https://github.com/menna3lwan/doctor_app">
-  <img src="https://github-readme-stats.vercel.app/api/pin/?username=menna3lwan&repo=doctor_app&theme=tokyonight&hide_border=true" />
-</a>
-
-</div>
-
----
-
-<br>
-
-<div align="center">
 
 ## GitHub Analytics
 
