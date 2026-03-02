@@ -1,19 +1,19 @@
 <div align="center">
-    <img src="https://readme-typing-svg.herokuapp.com/?font=Righteous&size=35&center=true&vCenter=true&width=600&height=70&duration=4000&color=FF8C00&lines=Hi+There;I'm+Menna+Elwan;Flutter+Developer;Mobile+Application+Engineer" />
+  <img src="https://readme-typing-svg.herokuapp.com/?font=Righteous&size=36&center=true&vCenter=true&width=750&height=70&duration=4000&color=70A5FD&lines=Hi+There!;I'm+Menna+Elwan;Flutter+Developer;Mobile+Application+Engineer" />
 </div>
 
 <br>
 
 <div align="center">
 
-<img src="https://img.shields.io/badge/Flutter-02569B?style=for-the-badge&logo=flutter&logoColor=white"/>
-<img src="https://img.shields.io/badge/Dart-0175C2?style=for-the-badge&logo=dart&logoColor=white"/>
-<img src="https://img.shields.io/badge/Firebase-FFCA28?style=for-the-badge&logo=firebase&logoColor=black"/>
-<img src="https://img.shields.io/badge/Clean%20Architecture-111827?style=for-the-badge"/>
+# Menna Elwan  
+### Flutter Developer | Mobile Application Engineer  
 
 </div>
 
 ---
+
+<br>
 
 <div align="center">
 
@@ -21,41 +21,108 @@
 
 </div>
 
-<table align="center">
-<tr>
-<td width="600">
-
-I am a **Flutter Developer** specializing in building scalable, 
-high-performance cross-platform mobile applications.
-
-Currently pursuing a degree in **Computer Science & Artificial Intelligence**
-at **Benha University**, with strong focus on clean architecture,
-modular design patterns, and production-ready code quality.
-
-Actively advancing my expertise in:
-
-• Advanced Flutter Development  
-• Native Android (Kotlin / Java)  
-• Performance Optimization  
-• Scalable Mobile Architecture  
-
-</td>
-</tr>
-</table>
-
 <br>
 
 <p align="center">
-<a href="https://github.com/menna3lwan?tab=repositories">
-<img src="https://img.shields.io/badge/View%20All%20Projects-GitHub%20Repositories-111827?style=for-the-badge&logo=github&logoColor=white"/>
-</a>
+
+I develop scalable cross-platform mobile applications using <b>Flutter</b>,  
+with strong focus on clean architecture, maintainability, and performance optimization.  
+
+Computer Science & Artificial Intelligence student passionate about  
+building structured, production-ready mobile solutions  
+with elegant UI and solid engineering practices.  
+
 </p>
 
 <br>
 
 <div align="center">
-    <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" />
+
+<img src="https://img.shields.io/badge/Flutter-70A5FD?style=for-the-badge&logo=flutter&logoColor=white"/>
+<img src="https://img.shields.io/badge/Clean%20Architecture-1f2335?style=for-the-badge"/>
+<img src="https://img.shields.io/badge/State%20Management-7aa2f7?style=for-the-badge"/>
+<img src="https://img.shields.io/badge/API%20Integration-2ac3de?style=for-the-badge"/>
+<img src="https://img.shields.io/badge/Firebase-ff9e64?style=for-the-badge&logo=firebase&logoColor=white"/>
+
 </div>
+
+---
+
+<br>
+
+<div align="center">
+
+## Technical Expertise
+
+</div>
+
+<br>
+
+<div align="center">
+
+<table>
+<tr>
+<td width="33%" align="center">
+
+### Mobile Development
+Cross-Platform Apps  
+Advanced State Management  
+Performance Optimization  
+UI / UX Implementation  
+
+</td>
+
+<td width="33%" align="center">
+
+### Architecture
+Clean Architecture  
+MVVM / MVI  
+Repository Pattern  
+Dependency Injection  
+SDLC & Agile  
+
+</td>
+
+<td width="33%" align="center">
+
+### Backend & Integration
+REST API Integration  
+Firebase Authentication  
+Firestore  
+Cloud Messaging  
+Supabase  
+
+</td>
+</tr>
+</table>
+
+</div>
+
+---
+
+<br>
+
+<div align="center">
+
+## Featured Projects
+
+</div>
+
+<br>
+
+<div align="center">
+
+<a href="https://github.com/menna3lwan/patient_app">
+<img src="https://github-readme-stats.vercel.app/api/pin/?username=menna3lwan&repo=patient_app&theme=tokyonight&hide_border=true"/>
+</a>
+
+<a href="https://github.com/menna3lwan/movie_app">
+<img src="https://github-readme-stats.vercel.app/api/pin/?username=menna3lwan&repo=movie_app&theme=tokyonight&hide_border=true"/>
+</a>
+
+</div>
+
+---
 
 <br>
 
@@ -65,20 +132,49 @@ Actively advancing my expertise in:
 
 </div>
 
-<p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=menna3lwan&show_icons=true&theme=github_dark&hide_border=true&title_color=FF8C00&icon_color=FF8C00" height="180"/>
-</p>
+<br>
 
-<p align="center">
-  <img src="https://streak-stats.demolab.com?user=menna3lwan&theme=github-dark&hide_border=true&ring=FF8C00&fire=FF8C00&currStreakLabel=FF8C00" height="180"/>
-</p>
+<div align="center">
 
-<p align="center">
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=menna3lwan&layout=compact&theme=github_dark&hide_border=true&title_color=FF8C00" height="160"/>
-</p>
+<img src="https://github-readme-stats.vercel.app/api?username=menna3lwan&show_icons=true&theme=tokyonight&hide_border=true" height="170"/>
+<img src="https://github-readme-streak-stats.herokuapp.com/?user=menna3lwan&theme=tokyonight&hide_border=true" height="170"/>
+
+</div>
 
 <br>
 
 <div align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=FF8C00&height=120&section=footer"/>
+
+<img src="https://github-readme-activity-graph.vercel.app/graph?username=menna3lwan&theme=tokyo-night&hide_border=true"/>
+
 </div>
+
+---
+
+<br>
+
+<div align="center">
+
+## Connect With Me
+
+</div>
+
+<br>
+
+<div align="center">
+
+<a href="https://www.linkedin.com/in/menna-elwan/">
+<img src="https://img.shields.io/badge/LinkedIn-7aa2f7?style=for-the-badge&logo=linkedin&logoColor=white"/>
+</a>
+
+<a href="mailto:menna3lwan@gmail.com">
+<img src="https://img.shields.io/badge/Email-2ac3de?style=for-the-badge&logo=gmail&logoColor=white"/>
+</a>
+
+<a href="https://github.com/menna3lwan">
+<img src="https://img.shields.io/badge/GitHub-1f2335?style=for-the-badge&logo=github&logoColor=white"/>
+</a>
+
+</div>
+
+<br>
