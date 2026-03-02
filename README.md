@@ -1,81 +1,139 @@
-Menna Maher Elwan
-<p align="center"> <img src="https://readme-typing-svg.herokuapp.com?font=Space+Mono&size=22&duration=3000&pause=800&color=F59E0B&center=true&vCenter=true&width=700&lines=Flutter+Developer;Cross-Platform+App+Engineer;Clean+Architecture+Enthusiast;Firebase+Integration+Expert" /> </p> <p align="center"> <img src="https://img.shields.io/badge/Flutter-02569B?style=for-the-badge&logo=flutter&logoColor=white"/> <img src="https://img.shields.io/badge/Dart-0175C2?style=for-the-badge&logo=dart&logoColor=white"/> <img src="https://img.shields.io/badge/Firebase-FFCA28?style=for-the-badge&logo=firebase&logoColor=black"/> <img src="https://img.shields.io/badge/Clean%20Architecture-Professional-orange?style=for-the-badge"/> </p>
-<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/aboutme/aboutme-original.svg" width="20"/> About
+# Menna Maher Elwan
+
+<p align="center">
+  <img src="https://readme-typing-svg.herokuapp.com?font=Space+Mono&size=22&duration=3000&pause=1000&color=FF8C00&center=true&vCenter=true&width=750&lines=Flutter+Developer;Cross-Platform+Mobile+Engineer;Clean+Architecture+Advocate;Firebase+%7C+REST+API+Integration" />
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Flutter-02569B?style=for-the-badge&logo=flutter&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Dart-0175C2?style=for-the-badge&logo=dart&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Firebase-FFCA28?style=for-the-badge&logo=firebase&logoColor=black"/>
+  <img src="https://img.shields.io/badge/Clean%20Architecture-1E293B?style=for-the-badge"/>
+</p>
+
+---
+
+## Profile
+
+```yaml
 Name: Menna Maher Elwan
 Role: Flutter & Mobile Developer
-Education: Computer Science & Artificial Intelligence
+Education: B.Sc. Computer Science & Artificial Intelligence
 University: Benha University
-Rank: 7th Nationwide - DEPI Mobile Track
+Rank: 7th Nationwide - DEPI Mobile Development Track
 Location: Egypt
+```
 
-Building scalable, high-performance cross-platform applications using Flutter & Dart.
-Focused on clean code, modular architecture, and optimized UI/UX experiences.
+Focused on building scalable, high-performance mobile applications using Flutter & Dart.  
+Strong foundation in clean architecture, modular design patterns, and optimized UI/UX delivery.
 
-<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg" width="20"/> Tech Stack
-Mobile Development
-<p> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg" width="40"/> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dart/dart-original.svg" width="40"/> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/android/android-original.svg" width="40"/> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kotlin/kotlin-original.svg" width="40"/> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" width="40"/> </p>
-Architecture & Patterns
+---
 
-Clean Architecture
+## Technical Expertise
 
-MVVM / MVI
+### Mobile Development
 
-Repository Pattern
+<p>
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg" width="40"/>
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dart/dart-original.svg" width="40"/>
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/android/android-original.svg" width="40"/>
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kotlin/kotlin-original.svg" width="40"/>
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" width="40"/>
+</p>
 
-Dependency Injection
+- Cross-Platform Development  
+- State Management (Provider, Riverpod, BLoC)  
+- Performance Optimization  
+- UI/UX Implementation  
 
-Provider / Riverpod / BLoC
+---
 
-Backend & Integration
-<p> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg" width="40"/> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" width="40"/> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" width="40"/> </p>
+### Architecture & Engineering
 
-REST API Integration
+- Clean Architecture  
+- MVVM / MVI  
+- Repository Pattern  
+- Dependency Injection  
+- SDLC & Agile Methodologies  
 
-Firestore
+---
 
-Cloud Messaging
+### Backend & Integration
 
-Supabase
+<p>
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg" width="40"/>
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" width="40"/>
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" width="40"/>
+</p>
 
-<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" width="20"/> Featured Projects
-Hen Lehen — Women-Only Medical Platform
+- REST API Integration  
+- Firebase Authentication  
+- Firestore Database  
+- Cloud Messaging  
+- Supabase  
 
-Separate Patient & Doctor Apps
+---
 
-Real-Time Medical Chat
+## Featured Projects
 
-Appointment Booking System
+### Hen Lehen — Women-Only Medical Platform
+- Dual Applications (Patient & Doctor)  
+- Real-Time Chat System  
+- Appointment Booking  
+- Role-Based Access Control  
 
-Role-Based User Flow
+### Movie App
+- Clean Architecture Implementation  
+- Modular Code Structure  
+- REST API Integration  
+- Dependency Injection  
 
-Movie App
+### Taskatk App
+- Firebase Integration  
+- Push Notifications  
+- Streak Tracking Logic  
 
-Clean Architecture Implementation
+### Fashion Store App
+- E-Commerce Features  
+- Wishlist & Order Tracking  
+- Real-Time Notifications  
 
-Repository Pattern
+---
 
-REST API Integration
+## GitHub Analytics
 
-Modular Scalable Structure
+<p align="center">
+  <img src="https://github-readme-stats.vercel.app/api?username=menna3lwan&show_icons=true&theme=github_dark&hide_border=true&title_color=FF8C00&icon_color=FF8C00"/>
+  <img src="https://github-readme-streak-stats.herokuapp.com/?user=menna3lwan&theme=github-dark&hide_border=true&ring=FF8C00"/>
+</p>
 
-Taskatk App
+---
 
-Firebase Integration
+## Professional Interests
 
-Push Notifications
+- Flutter Development Roles  
+- Mobile AI Integration  
+- Scalable Architecture Design  
+- Internship / Freelance / Full-Time Opportunities  
 
-Streak Tracking System
+---
 
-Fashion Store App
+## Contact
 
-E-Commerce Architecture
+<p align="center">
+  <a href="mailto:menna3lwan@gmail.com">
+    <img src="https://img.shields.io/badge/Email-Contact-FF8C00?style=for-the-badge&logo=gmail&logoColor=white"/>
+  </a>
+  <a href="https://www.linkedin.com/in/menna-elwan/">
+    <img src="https://img.shields.io/badge/LinkedIn-Profile-0A66C2?style=for-the-badge&logo=linkedin"/>
+  </a>
+  <a href="https://github.com/menna3lwan">
+    <img src="https://img.shields.io/badge/GitHub-Follow-1E293B?style=for-the-badge&logo=github&logoColor=white"/>
+  </a>
+</p>
 
-Wishlist Management
+---
 
-Order Tracking
-
-<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" width="20"/> GitHub Stats
-<p align="center"> <img src="https://github-readme-stats.vercel.app/api?username=menna3lwan&show_icons=true&theme=radical&hide_border=true"/> <img src="https://github-readme-streak-stats.herokuapp.com/?user=menna3lwan&theme=radical&hide_border=true"/> </p>
-<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" width="20"/> Connect
-<p align="center"> <a href="mailto:menna3lwan@gmail.com"> <img src="https://img.shields.io/badge/Email-Contact-orange?style=for-the-badge&logo=gmail"/> </a> <a href="https://www.linkedin.com/in/menna-elwan/"> <img src="https://img.shields.io/badge/LinkedIn-Profile-0A66C2?style=for-the-badge&logo=linkedin"/> </a> <a href="https://github.com/menna3lwan"> <img src="https://img.shields.io/badge/GitHub-Follow-black?style=for-the-badge&logo=github"/> </a> </p>
-<p align="center"> <img src="https://capsule-render.vercel.app/api?type=waving&color=F59E0B&height=120&section=footer"/> </p>
+<p align="center">
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=FF8C00&height=120&section=footer"/>
+</p>
