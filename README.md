@@ -42,6 +42,12 @@ with elegant UI and solid engineering practices.
 
 <div align="center">
 
+---
+
+<br>
+
+<div align="center">
+
 ## Technical Expertise
 
 </div>
@@ -50,48 +56,26 @@ with elegant UI and solid engineering practices.
 
 <div align="center">
 
-<table>
-<tr>
-<td width="33%" align="center">
-
 ### Mobile Development
-Cross-Platform Apps  
-Advanced State Management  
-Performance Optimization  
-UI / UX Implementation  
+Cross-Platform Apps • Advanced State Management  
+Performance Optimization • UI / UX Implementation  
 
-</td>
-
-<td width="33%" align="center">
+<br>
 
 ### Architecture
-Clean Architecture  
-MVVM / MVI  
-Repository Pattern  
-Dependency Injection  
+Clean Architecture • MVVM / MVI  
+Repository Pattern • Dependency Injection  
 SDLC & Agile  
 
-</td>
-
-<td width="33%" align="center">
+<br>
 
 ### Backend & Integration
-REST API Integration  
-Firebase Authentication  
-Firestore  
-Cloud Messaging  
-Supabase  
-
-</td>
-</tr>
-</table>
+REST API Integration • Firebase Authentication  
+Firestore • Cloud Messaging • Supabase  
 
 </div>
 
 ---
-
-<br>
-
 <div align="center">
 
 ## Languages & Tools
