@@ -1,8 +1,8 @@
-# Menna Maher Elwan
+<div align="center">
+    <img src="https://readme-typing-svg.herokuapp.com/?font=Righteous&size=35&center=true&vCenter=true&width=600&height=70&duration=4000&color=FF8C00&lines=Hi+There;I'm+Menna+Elwan;Flutter+Developer;Mobile+Application+Engineer" />
+</div>
 
-<p align="center">
-  <img src="https://readme-typing-svg.herokuapp.com?font=Space+Mono&size=22&duration=3000&pause=1000&color=FF8C00&center=true&vCenter=true&width=750&lines=Flutter+Developer;Cross-Platform+Mobile+Engineer;Clean+Architecture+Advocate;Firebase+%7C+REST+API+Integration" />
-</p>
+<br>
 
 <p align="center">
   <img src="https://img.shields.io/badge/Flutter-02569B?style=for-the-badge&logo=flutter&logoColor=white"/>
@@ -13,32 +13,33 @@
 
 ---
 
-## Profile
+## About Me
 
-```yaml
-Name: Menna Maher Elwan
-Role: Flutter & Mobile Developer
-Education: B.Sc. Computer Science & Artificial Intelligence
-University: Benha University
-Rank: 7th Nationwide - DEPI Mobile Development Track
-Location: Egypt
-```
+- Working as a **Flutter Developer** | **Mobile Application Developer**
+- Computer Science & Artificial Intelligence Student at **Benha University**
+- Currently learning **Advanced Flutter Development** and **Native Android (Kotlin / Java)**
+- Ranked **7th Nationwide** in the Mobile Development Track (DEPI)
+- All projects available at  
+  **[My GitHub Repositories](https://github.com/menna3lwan?tab=repositories)**
 
-Focused on building scalable, high-performance mobile applications using Flutter & Dart.  
-Strong foundation in clean architecture, modular design patterns, and optimized UI/UX delivery.
+<br>
 
----
+<div align="center">
+    <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" />
+</div>
+
+<br>
 
 ## Technical Expertise
 
 ### Mobile Development
 
 <p>
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg" width="40"/>
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dart/dart-original.svg" width="40"/>
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/android/android-original.svg" width="40"/>
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kotlin/kotlin-original.svg" width="40"/>
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" width="40"/>
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg" width="45"/>
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dart/dart-original.svg" width="45"/>
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/android/android-original.svg" width="45"/>
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kotlin/kotlin-original.svg" width="45"/>
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" width="45"/>
 </p>
 
 - Cross-Platform Development  
@@ -48,7 +49,7 @@ Strong foundation in clean architecture, modular design patterns, and optimized 
 
 ---
 
-### Architecture & Engineering
+## Architecture & Engineering
 
 - Clean Architecture  
 - MVVM / MVI  
@@ -58,45 +59,19 @@ Strong foundation in clean architecture, modular design patterns, and optimized 
 
 ---
 
-### Backend & Integration
+## Backend & Integration
 
 <p>
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg" width="40"/>
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" width="40"/>
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" width="40"/>
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg" width="45"/>
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" width="45"/>
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" width="45"/>
 </p>
 
 - REST API Integration  
 - Firebase Authentication  
-- Firestore Database  
+- Firestore  
 - Cloud Messaging  
 - Supabase  
-
----
-
-## Featured Projects
-
-### Hen Lehen — Women-Only Medical Platform
-- Dual Applications (Patient & Doctor)  
-- Real-Time Chat System  
-- Appointment Booking  
-- Role-Based Access Control  
-
-### Movie App
-- Clean Architecture Implementation  
-- Modular Code Structure  
-- REST API Integration  
-- Dependency Injection  
-
-### Taskatk App
-- Firebase Integration  
-- Push Notifications  
-- Streak Tracking Logic  
-
-### Fashion Store App
-- E-Commerce Features  
-- Wishlist & Order Tracking  
-- Real-Time Notifications  
 
 ---
 
@@ -109,16 +84,7 @@ Strong foundation in clean architecture, modular design patterns, and optimized 
 
 ---
 
-## Professional Interests
-
-- Flutter Development Roles  
-- Mobile AI Integration  
-- Scalable Architecture Design  
-- Internship / Freelance / Full-Time Opportunities  
-
----
-
-## Contact
+## Connect
 
 <p align="center">
   <a href="mailto:menna3lwan@gmail.com">
@@ -132,8 +98,8 @@ Strong foundation in clean architecture, modular design patterns, and optimized 
   </a>
 </p>
 
----
+<br>
 
-<p align="center">
+<div align="center">
   <img src="https://capsule-render.vercel.app/api?type=waving&color=FF8C00&height=120&section=footer"/>
-</p>
+</div>
