@@ -6,8 +6,7 @@
 
 <div align="center">
 
-# Menna Elwan  
-### Flutter Developer | Mobile Application Engineer  
+## Flutter Developer | Mobile Application Engineer
 
 </div>
 
@@ -52,58 +51,6 @@ with elegant UI and solid engineering practices.
 
 <div align="center">
 
-## Technical Expertise
-
-</div>
-
-<br>
-
-<div align="center">
-
-<table>
-<tr>
-<td width="33%" align="center">
-
-### Mobile Development
-Cross-Platform Apps  
-Advanced State Management  
-Performance Optimization  
-UI / UX Implementation  
-
-</td>
-
-<td width="33%" align="center">
-
-### Architecture
-Clean Architecture  
-MVVM / MVI  
-Repository Pattern  
-Dependency Injection  
-SDLC & Agile  
-
-</td>
-
-<td width="33%" align="center">
-
-### Backend & Integration
-REST API Integration  
-Firebase Authentication  
-Firestore  
-Cloud Messaging  
-Supabase  
-
-</td>
-</tr>
-</table>
-
-</div>
-
----
-
-<br>
-
-<div align="center">
-
 ## Featured Projects
 
 </div>
@@ -113,11 +60,11 @@ Supabase
 <div align="center">
 
 <a href="https://github.com/menna3lwan/patient_app">
-<img src="https://github-readme-stats.vercel.app/api/pin/?username=menna3lwan&repo=patient_app&theme=tokyonight&hide_border=true"/>
+<img src="https://github-readme-stats.vercel.app/api/pin/?username=menna3lwan&repo=patient_app&theme=tokyonight"/>
 </a>
 
 <a href="https://github.com/menna3lwan/movie_app">
-<img src="https://github-readme-stats.vercel.app/api/pin/?username=menna3lwan&repo=movie_app&theme=tokyonight&hide_border=true"/>
+<img src="https://github-readme-stats.vercel.app/api/pin/?username=menna3lwan&repo=movie_app&theme=tokyonight"/>
 </a>
 
 </div>
@@ -136,8 +83,8 @@ Supabase
 
 <div align="center">
 
-<img src="https://github-readme-stats.vercel.app/api?username=menna3lwan&show_icons=true&theme=tokyonight&hide_border=true" height="170"/>
-<img src="https://github-readme-streak-stats.herokuapp.com/?user=menna3lwan&theme=tokyonight&hide_border=true" height="170"/>
+<img src="https://github-readme-stats.vercel.app/api?username=menna3lwan&show_icons=true&theme=tokyonight" height="170"/>
+<img src="https://github-readme-streak-stats.herokuapp.com/?user=menna3lwan&theme=tokyonight" height="170"/>
 
 </div>
 
@@ -145,7 +92,7 @@ Supabase
 
 <div align="center">
 
-<img src="https://github-readme-activity-graph.vercel.app/graph?username=menna3lwan&theme=tokyo-night&hide_border=true"/>
+<img src="https://github-readme-activity-graph.vercel.app/graph?username=menna3lwan&theme=tokyo-night"/>
 
 </div>
 
@@ -176,5 +123,3 @@ Supabase
 </a>
 
 </div>
-
-<br>
