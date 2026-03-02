@@ -1,105 +1,68 @@
-<div align="center">
-    <img src="https://readme-typing-svg.herokuapp.com/?font=Righteous&size=35&center=true&vCenter=true&width=600&height=70&duration=4000&color=FF8C00&lines=Hi+There;I'm+Menna+Elwan;Flutter+Developer;Mobile+Application+Engineer" />
-</div>
+## <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/aboutme/aboutme-original.svg" width="22"/> About Me
+
+<table>
+<tr>
+<td>
+
+<img src="https://img.shields.io/badge/Role-Flutter%20Developer-02569B?style=flat-square&logo=flutter&logoColor=white"/><br>
+<img src="https://img.shields.io/badge/Focus-Mobile%20Applications-0175C2?style=flat-square"/><br>
+<img src="https://img.shields.io/badge/Education-Computer%20Science%20%26%20AI-1E293B?style=flat-square"/><br>
+<img src="https://img.shields.io/badge/University-Benha%20University-FF8C00?style=flat-square"/><br>
+<img src="https://img.shields.io/badge/Rank-7th%20Nationwide%20DEPI-FF6F00?style=flat-square"/><br>
+<img src="https://img.shields.io/badge/Learning-Advanced%20Flutter%20%7C%20Kotlin%20%7C%20Java-0A66C2?style=flat-square"/>
 
 <br>
 
+Professional Flutter developer focused on scalable mobile solutions,  
+clean architecture, and performance-optimized applications.
+
+</td>
+</tr>
+</table>
+
 <p align="center">
-  <img src="https://img.shields.io/badge/Flutter-02569B?style=for-the-badge&logo=flutter&logoColor=white"/>
-  <img src="https://img.shields.io/badge/Dart-0175C2?style=for-the-badge&logo=dart&logoColor=white"/>
-  <img src="https://img.shields.io/badge/Firebase-FFCA28?style=for-the-badge&logo=firebase&logoColor=black"/>
-  <img src="https://img.shields.io/badge/Clean%20Architecture-1E293B?style=for-the-badge"/>
+  <a href="https://github.com/menna3lwan?tab=repositories">
+    <img src="https://img.shields.io/badge/View%20All%20Projects-GitHub%20Repositories-111827?style=for-the-badge&logo=github&logoColor=white"/>
+  </a>
 </p>
 
 ---
 
-## About Me
-
-- Working as a **Flutter Developer** | **Mobile Application Developer**
-- Computer Science & Artificial Intelligence Student at **Benha University**
-- Currently learning **Advanced Flutter Development** and **Native Android (Kotlin / Java)**
-- Ranked **7th Nationwide** in the Mobile Development Track (DEPI)
-- All projects available at  
-  **[My GitHub Repositories](https://github.com/menna3lwan?tab=repositories)**
-
-<br>
-
-<div align="center">
-    <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" />
-</div>
-
-<br>
-
-## Technical Expertise
+## <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg" width="22"/> Technical Expertise
 
 ### Mobile Development
 
 <p>
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg" width="45"/>
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dart/dart-original.svg" width="45"/>
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/android/android-original.svg" width="45"/>
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kotlin/kotlin-original.svg" width="45"/>
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" width="45"/>
+  <img src="https://img.shields.io/badge/Cross--Platform-02569B?style=for-the-badge&logo=flutter&logoColor=white"/>
+  <img src="https://img.shields.io/badge/State%20Management-0175C2?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/Performance-FF8C00?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/UI%2FUX-1E293B?style=for-the-badge"/>
 </p>
 
-- Cross-Platform Development  
-- State Management (Provider, Riverpod, BLoC)  
-- Performance Optimization  
-- UI/UX Implementation  
+- Provider · Riverpod · BLoC  
+- Optimized Rendering & Efficient Rebuilds  
+- Responsive & Adaptive Layouts  
 
 ---
 
-## Architecture & Engineering
-
-- Clean Architecture  
-- MVVM / MVI  
-- Repository Pattern  
-- Dependency Injection  
-- SDLC & Agile Methodologies  
-
----
-
-## Backend & Integration
+### Architecture & Engineering
 
 <p>
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg" width="45"/>
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" width="45"/>
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" width="45"/>
-</p>
-
-- REST API Integration  
-- Firebase Authentication  
-- Firestore  
-- Cloud Messaging  
-- Supabase  
-
----
-
-## GitHub Analytics
-
-<p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=menna3lwan&show_icons=true&theme=github_dark&hide_border=true&title_color=FF8C00&icon_color=FF8C00"/>
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=menna3lwan&theme=github-dark&hide_border=true&ring=FF8C00"/>
+  <img src="https://img.shields.io/badge/Clean%20Architecture-111827?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/MVVM%20%2F%20MVI-0A66C2?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/Repository%20Pattern-FF6F00?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/Dependency%20Injection-02569B?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/Agile%20%26%20SDLC-1E293B?style=for-the-badge"/>
 </p>
 
 ---
 
-## Connect
+### Backend & Integration
 
-<p align="center">
-  <a href="mailto:menna3lwan@gmail.com">
-    <img src="https://img.shields.io/badge/Email-Contact-FF8C00?style=for-the-badge&logo=gmail&logoColor=white"/>
-  </a>
-  <a href="https://www.linkedin.com/in/menna-elwan/">
-    <img src="https://img.shields.io/badge/LinkedIn-Profile-0A66C2?style=for-the-badge&logo=linkedin"/>
-  </a>
-  <a href="https://github.com/menna3lwan">
-    <img src="https://img.shields.io/badge/GitHub-Follow-1E293B?style=for-the-badge&logo=github&logoColor=white"/>
-  </a>
+<p>
+  <img src="https://img.shields.io/badge/REST%20APIs-02569B?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/Firebase%20Auth-FFCA28?style=for-the-badge&logo=firebase&logoColor=black"/>
+  <img src="https://img.shields.io/badge/Firestore-FF8C00?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/Cloud%20Messaging-0175C2?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/Supabase-111827?style=for-the-badge"/>
 </p>
-
-<br>
-
-<div align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=FF8C00&height=120&section=footer"/>
-</div>
