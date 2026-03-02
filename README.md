@@ -1,18 +1,19 @@
 <div align="center">
-  <img src="https://readme-typing-svg.herokuapp.com/?font=Righteous&size=36&center=true&vCenter=true&width=700&height=70&duration=4000&color=6C63FF&lines=Menna+Elwan;Flutter+Developer;Mobile+Application+Engineer" />
+    <img src="https://readme-typing-svg.herokuapp.com/?font=Righteous&size=35&center=true&vCenter=true&width=600&height=70&duration=4000&color=FF8C00&lines=Hi+There;I'm+Menna+Elwan;Flutter+Developer;Mobile+Application+Engineer" />
 </div>
 
 <br>
 
 <div align="center">
 
-# Flutter Developer | Mobile Engineer
+<img src="https://img.shields.io/badge/Flutter-02569B?style=for-the-badge&logo=flutter&logoColor=white"/>
+<img src="https://img.shields.io/badge/Dart-0175C2?style=for-the-badge&logo=dart&logoColor=white"/>
+<img src="https://img.shields.io/badge/Firebase-FFCA28?style=for-the-badge&logo=firebase&logoColor=black"/>
+<img src="https://img.shields.io/badge/Clean%20Architecture-111827?style=for-the-badge"/>
 
 </div>
 
 ---
-
-<br>
 
 <div align="center">
 
@@ -20,114 +21,64 @@
 
 </div>
 
+<table align="center">
+<tr>
+<td width="600">
+
+I am a **Flutter Developer** specializing in building scalable, 
+high-performance cross-platform mobile applications.
+
+Currently pursuing a degree in **Computer Science & Artificial Intelligence**
+at **Benha University**, with strong focus on clean architecture,
+modular design patterns, and production-ready code quality.
+
+Actively advancing my expertise in:
+
+• Advanced Flutter Development  
+• Native Android (Kotlin / Java)  
+• Performance Optimization  
+• Scalable Mobile Architecture  
+
+</td>
+</tr>
+</table>
+
 <br>
 
 <p align="center">
-
-I craft scalable, high-performance cross-platform mobile applications  
-using <b>Flutter</b> with strong architectural foundations.
-
-Computer Science & Artificial Intelligence student  
-focused on building production-ready mobile solutions  
-with clean, maintainable, and efficient code.
-
-Passionate about turning complex ideas  
-into elegant and user-centered mobile experiences.
-
+<a href="https://github.com/menna3lwan?tab=repositories">
+<img src="https://img.shields.io/badge/View%20All%20Projects-GitHub%20Repositories-111827?style=for-the-badge&logo=github&logoColor=white"/>
+</a>
 </p>
 
 <br>
 
 <div align="center">
-
-<img src="https://img.shields.io/badge/Flutter-6C63FF?style=for-the-badge&logo=flutter&logoColor=white"/>
-<img src="https://img.shields.io/badge/Clean%20Architecture-1E1E2F?style=for-the-badge"/>
-<img src="https://img.shields.io/badge/State%20Management-8A2BE2?style=for-the-badge"/>
-<img src="https://img.shields.io/badge/API%20Integration-FF6F61?style=for-the-badge"/>
-<img src="https://img.shields.io/badge/Firebase-FFA000?style=for-the-badge&logo=firebase&logoColor=white"/>
-
-</div>
-
----
-
-<br>
-
-<div align="center">
-
-## Core Expertise
-
+    <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" />
 </div>
 
 <br>
 
 <div align="center">
 
-| Mobile Development | Architecture | Backend & Integration |
-|-------------------|-------------|-----------------------|
-| Cross-Platform Apps | Clean Architecture | REST APIs |
-| Advanced State Management | MVVM / MVI | Firebase Auth |
-| Performance Optimization | Repository Pattern | Firestore |
-| UI / UX Implementation | Dependency Injection | Cloud Messaging |
-| Production Ready Builds | SDLC & Agile | Supabase |
+## GitHub Analytics
 
 </div>
 
----
+<p align="center">
+  <img src="https://github-readme-stats.vercel.app/api?username=menna3lwan&show_icons=true&theme=github_dark&hide_border=true&title_color=FF8C00&icon_color=FF8C00" height="180"/>
+</p>
+
+<p align="center">
+  <img src="https://streak-stats.demolab.com?user=menna3lwan&theme=github-dark&hide_border=true&ring=FF8C00&fire=FF8C00&currStreakLabel=FF8C00" height="180"/>
+</p>
+
+<p align="center">
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=menna3lwan&layout=compact&theme=github_dark&hide_border=true&title_color=FF8C00" height="160"/>
+</p>
 
 <br>
 
 <div align="center">
-
-## Selected Projects
-
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=FF8C00&height=120&section=footer"/>
 </div>
-
-<br>
-
-<div align="center">
-
-<a href="https://github.com/menna3lwan">
-<img src="https://github-readme-stats.vercel.app/api/pin/?username=menna3lwan&repo=patient_app&theme=tokyonight&hide_border=true" />
-</a>
-
-<a href="https://github.com/menna3lwan">
-<img src="https://github-readme-stats.vercel.app/api/pin/?username=menna3lwan&repo=movie_app&theme=tokyonight&hide_border=true" />
-</a>
-
-</div>
-
----
-
-<br>
-
-<div align="center">
-
-## Connect
-
-</div>
-
-<br>
-
-<div align="center">
-
-<a href="https://www.linkedin.com/in/menna-elwan/">
-<img src="https://img.shields.io/badge/LinkedIn-6C63FF?style=for-the-badge&logo=linkedin&logoColor=white"/>
-</a>
-
-<a href="mailto:menna3lwan@gmail.com">
-<img src="https://img.shields.io/badge/Email-FF6F61?style=for-the-badge&logo=gmail&logoColor=white"/>
-</a>
-
-<a href="https://github.com/menna3lwan">
-<img src="https://img.shields.io/badge/GitHub-1E1E2F?style=for-the-badge&logo=github&logoColor=white"/>
-</a>
-
-</div>
-
-<br>
-
----
-
-<br>
-
-<!-- 🔥 سيبي GitHub Analytics و Contribution Graph هنا زي ما هما -->
