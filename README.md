@@ -42,11 +42,7 @@ with elegant UI and solid engineering practices.
 
 <div align="center">
 
----
 
-<br>
-
-<div align="center">
 
 ## Technical Expertise
 
