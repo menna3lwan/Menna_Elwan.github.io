@@ -3,9 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menna Maher Elwan — Flutter & Mobile Developer</title>
-    <meta name="description" content="Portfolio of Menna Maher Elwan, Mobile Developer specializing in Flutter, Dart, and cross-platform development." />
+    <title>Menna Maher Elwan — Software Developer &amp; Flutter Engineer</title>
+    <meta name="description" content="Portfolio of Menna Maher Elwan, a Software Developer and Flutter Engineer specializing in Clean Architecture, cross-platform mobile development, and open-source contribution." />
     <meta name="author" content="Menna Maher Elwan" />
+    <link rel="canonical" href="https://menna3lwan.github.io/Menna_Elwan.github.io/" />
+    <meta name="theme-color" content="#0a192f" />
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%230a192f'/%3E%3Ctext x='50' y='68' font-size='54' font-family='monospace' font-weight='700' fill='%23ff9000' text-anchor='middle'%3EME%3C/text%3E%3C/svg%3E" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Menna Maher Elwan — Software Developer & Flutter Engineer" />
+    <meta property="og:description" content="Software Developer and Flutter Engineer specializing in Clean Architecture, cross-platform mobile development, and open-source contribution." />
+    <meta property="og:url" content="https://menna3lwan.github.io/Menna_Elwan.github.io/" />
+    <meta property="og:image" content="https://menna3lwan.github.io/Menna_Elwan.github.io/images/profile.JPG" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Menna Maher Elwan — Software Developer & Flutter Engineer" />
+    <meta name="twitter:description" content="Software Developer and Flutter Engineer specializing in Clean Architecture, cross-platform mobile development, and open-source contribution." />
+    <meta name="twitter:image" content="https://menna3lwan.github.io/Menna_Elwan.github.io/images/profile.JPG" />
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Menna Maher Elwan",
+      "jobTitle": "Flutter Engineer",
+      "description": "Software Developer and Flutter Engineer specializing in Clean Architecture and cross-platform mobile development.",
+      "url": "https://menna3lwan.github.io/Menna_Elwan.github.io/",
+      "image": "https://menna3lwan.github.io/Menna_Elwan.github.io/images/profile.JPG",
+      "email": "mailto:menna3lwan@gmail.com",
+      "sameAs": [
+        "https://github.com/menna3lwan",
+        "https://www.linkedin.com/in/menna-elwan/"
+      ]
+    }
+    </script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Kaushan+Script&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Noto+Kufi+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -452,6 +486,7 @@
         }
         .project-link:hover{background:var(--orange-dark);transform:translateY(-2px);box-shadow:0 6px 20px rgba(255,144,0,0.2)}
         .project-link svg{width:12px;height:12px}
+        .project-note{font-family:var(--font-mono);font-size:.72rem;color:var(--slate);opacity:.7;font-style:italic}
 
         /* ACHIEVEMENTS */
         .achievements-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem}
@@ -512,6 +547,41 @@
         .reveal-scale.visible{opacity:1;transform:scale(1)}
         .d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}.d4{transition-delay:.4s}
 
+        /* Staggered reveal for grid children that don't carry an explicit d1-d4 class */
+        .skills-grid .reveal:nth-child(1),.projects-grid .reveal:nth-child(1),.achievements-grid .reveal:nth-child(1){transition-delay:.05s}
+        .skills-grid .reveal:nth-child(2),.projects-grid .reveal:nth-child(2),.achievements-grid .reveal:nth-child(2){transition-delay:.15s}
+        .skills-grid .reveal:nth-child(3),.projects-grid .reveal:nth-child(3),.achievements-grid .reveal:nth-child(3){transition-delay:.25s}
+        .skills-grid .reveal:nth-child(4),.projects-grid .reveal:nth-child(4),.achievements-grid .reveal:nth-child(4){transition-delay:.05s}
+        .skills-grid .reveal:nth-child(5),.projects-grid .reveal:nth-child(5),.achievements-grid .reveal:nth-child(5){transition-delay:.15s}
+        .skills-grid .reveal:nth-child(6),.projects-grid .reveal:nth-child(6),.achievements-grid .reveal:nth-child(6){transition-delay:.25s}
+        .projects-grid .reveal:nth-child(7){transition-delay:.05s}
+
+        /* PAGE LOAD TRANSITION */
+        body{animation:pageFadeIn .6s var(--ease) both}
+        @keyframes pageFadeIn{from{opacity:0}to{opacity:1}}
+
+        /* ACCESSIBILITY: skip-to-content link */
+        .skip-link{
+            position:absolute;top:-100px;left:1rem;z-index:2000;
+            background:var(--orange);color:var(--navy);font-family:var(--font-mono);
+            font-size:.85rem;font-weight:700;padding:.7rem 1.2rem;border-radius:6px;
+            transition:top .3s var(--ease);
+        }
+        .skip-link:focus{top:1rem}
+
+        /* ACCESSIBILITY: visible keyboard focus */
+        a:focus-visible,button:focus-visible,.btn:focus-visible,.project-link:focus-visible,.contact-card:focus-visible,.theme-option:focus-visible{
+            outline:2px solid var(--orange);outline-offset:3px;border-radius:4px;
+        }
+
+        /* ACCESSIBILITY: respect reduced-motion preference */
+        @media (prefers-reduced-motion: reduce){
+            *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
+            .particle{display:none}
+            .reveal,.reveal-left,.reveal-scale{opacity:1!important;transform:none!important}
+            body{animation:none}
+        }
+
         /* RESPONSIVE */
         @media(max-width:768px){
             .nav-links{
@@ -544,6 +614,8 @@
 </head>
 <body>
 
+<a href="#about" class="skip-link">Skip to content</a>
+
 <!-- PARTICLES -->
 <div class="particles" id="particles"></div>
 
@@ -557,8 +629,9 @@
             <li><a href="#education"><span class="nav-counter">03.</span><span data-i18n="nav_education">Education</span></a></li>
             <li><a href="#experience"><span class="nav-counter">04.</span><span data-i18n="nav_experience">Experience</span></a></li>
             <li><a href="#projects"><span class="nav-counter">05.</span><span data-i18n="nav_projects">Projects</span></a></li>
-            <li><a href="#achievements"><span class="nav-counter">06.</span><span data-i18n="nav_achievements">Achievements</span></a></li>
-            <li><a href="#contact"><span class="nav-counter">07.</span><span data-i18n="nav_contact">Contact</span></a></li>
+            <li><a href="#opensource"><span class="nav-counter">06.</span><span data-i18n="nav_opensource">Open Source</span></a></li>
+            <li><a href="#achievements"><span class="nav-counter">07.</span><span data-i18n="nav_achievements">Achievements</span></a></li>
+            <li><a href="#contact"><span class="nav-counter">08.</span><span data-i18n="nav_contact">Contact</span></a></li>
         </ul>
         <div class="nav-controls">
             <!-- Theme Toggle -->
@@ -599,22 +672,22 @@
             <div class="photo-wrap">
                 <div class="photo-ring"></div>
                 <div class="photo-ring-2"></div>
-                <img src="https://raw.githubusercontent.com/menna3lwan/Menna_Elwan.github.io/main/images/profile.JPG" alt="Menna Maher Elwan" class="hero-photo" loading="eager" fetchpriority="high" decoding="sync">
+                <img src="images/profile.JPG" alt="Menna Maher Elwan" class="hero-photo" width="220" height="220" loading="eager" fetchpriority="high" decoding="sync">
             </div>
             <p class="hero-greeting" data-i18n="hero_greeting">Hi, my name is</p>
             <h1 class="hero-name">Menna Maher Elwan</h1>
-            <p class="hero-tagline" data-i18n="hero_tagline">Flutter Developer &middot; Mobile Application Developer</p>
+            <p class="hero-tagline" data-i18n="hero_tagline">Software Developer &middot; Flutter Engineer</p>
             <div class="typed-wrap"><span id="typed"></span><span class="typed-cursor">|</span></div>
             <div class="hero-badge">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="8 6 4 6 4 2 20 2 20 6 16 6"/><path d="M12 17V22M8 22h8M4 6c0 6.627 3.582 12 8 12s8-5.373 8-12"/></svg>
-                <span data-i18n="hero_badge">Flutter Developer</span>
+                <span data-i18n="hero_badge">Flutter Engineer</span>
             </div>
             <p class="hero-desc" data-i18n="hero_desc">
-                Skilled Mobile Developer specializing in <strong style="color:var(--orange)">Flutter &amp; Dart</strong> for cross-platform mobile applications. Proficient in performance optimization, backend integration, REST APIs, and mobile UI/UX design. Strong knowledge of <strong style="color:var(--lightest-slate)">SDLC, Agile methodologies, and software testing (ISTQB)</strong>.
+                Software Developer whose primary focus is <strong style="color:var(--orange)">Flutter &amp; Dart</strong>, building scalable cross-platform applications guided by <strong style="color:var(--lightest-slate)">Clean Architecture and SOLID principles</strong>. Experienced in Firebase/REST backend integration, AI-assisted development, and open-source contribution, with a strong foundation in <strong style="color:var(--lightest-slate)">SDLC, Agile, and software testing (ISTQB)</strong>.
             </p>
             <div class="hero-stats">
-                <div class="stat"><div class="stat-number" data-count="4">0</div><div class="stat-label" data-i18n="stat_internships">Internships</div></div>
-                <div class="stat"><div class="stat-number" data-count="5">0</div><div class="stat-label" data-i18n="stat_projects">Projects</div></div>
+                <div class="stat"><div class="stat-number" data-count="8">0</div><div class="stat-label" data-i18n="stat_internships">Professional Roles</div></div>
+                <div class="stat"><div class="stat-number" data-count="7">0</div><div class="stat-label" data-i18n="stat_projects">Projects</div></div>
                 <div class="stat"><div class="stat-number">#7</div><div class="stat-label" data-i18n="stat_rank">Nationwide Rank DEPI</div></div>
                 <div class="stat"><div class="stat-number" data-count="2">0</div><div class="stat-label" data-i18n="stat_exp">Years Exp.</div></div>
             </div>
@@ -639,7 +712,7 @@
         <span class="section-label reveal"><span data-i18n="label_about">01. About Me</span></span>
         <h2 class="section-title reveal" data-i18n="title_about">Who I Am</h2>
         <p class="about-text reveal" data-i18n="about_text">
-            I'm a Computer Science and Artificial Intelligence student at <strong>Benha University</strong> with a passion for building elegant, performant mobile applications. With hands-on experience in <strong>Flutter &amp; Dart</strong>, I bridge the gap between design and engineering to create apps users love. Ranked <strong>7th nationwide</strong> in the Mobile Development track DEPI, I'm driven to contribute to innovative mobile projects.
+            I'm a Software Developer whose primary focus is <strong>Flutter</strong> — building scalable, maintainable mobile applications guided by <strong>Clean Architecture and SOLID principles</strong> rather than just shipping features. I'm also a Computer Science &amp; AI student at <strong>Benha University</strong>, ranked <strong>7th nationwide</strong> in DEPI's Mobile Development track. That foundation shows up in how I work: clear separation of concerns, disciplined state management, and a growing open-source contribution to packages other developers depend on.
         </p>
         <div class="info-grid">
             <div class="info-item reveal d1">
@@ -669,12 +742,12 @@
         <span class="section-label reveal"><span data-i18n="label_skills">02. Capabilities</span></span>
         <h2 class="section-title reveal" data-i18n="title_skills">Technical Expertise</h2>
         <div class="skills-grid">
-            <div class="skill-card reveal d1"><h4><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg> <span data-i18n="skill1_title">Mobile Development</span></h4><p data-i18n="skill1_desc">Flutter, Android SDK, iOS Development, Cross-Platform Development, Native Android</p></div>
-            <div class="skill-card reveal d2"><h4><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg> <span data-i18n="skill2_title">Programming Languages</span></h4><p data-i18n="skill2_desc">Dart, Flutter, Kotlin, Java, Python, C++, C</p></div>
-            <div class="skill-card reveal d3"><h4><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg> <span data-i18n="skill3_title">Architecture &amp; Patterns</span></h4><p data-i18n="skill3_desc">MVVM, MVI, Clean Architecture, State Management (Provider, Riverpod, BLoC)</p></div>
+            <div class="skill-card reveal d1"><h4><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg> <span data-i18n="skill1_title">Software Engineering &amp; Architecture</span></h4><p data-i18n="skill1_desc">Clean Architecture, SOLID Principles, Design Patterns (MVVM, MVI, Repository), System Design</p></div>
+            <div class="skill-card reveal d2"><h4><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg> <span data-i18n="skill2_title">Flutter &amp; Mobile Development</span></h4><p data-i18n="skill2_desc">Flutter, Dart, Android SDK, iOS Development, Cross-Platform Apps</p></div>
+            <div class="skill-card reveal d3"><h4><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg> <span data-i18n="skill3_title">State Management</span></h4><p data-i18n="skill3_desc">Bloc / Cubit, Provider, Riverpod</p></div>
             <div class="skill-card reveal d1"><h4><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg> <span data-i18n="skill4_title">Backend &amp; APIs</span></h4><p data-i18n="skill4_desc">REST API Integration, Firebase (Authentication, Firestore, Cloud Messaging)</p></div>
-            <div class="skill-card reveal d2"><h4><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg> <span data-i18n="skill5_title">Tools &amp; Technologies</span></h4><p data-i18n="skill5_desc">Git, GitHub, Android Studio, VS Code, Postman, UI/UX Design</p></div>
-            <div class="skill-card reveal d3"><h4><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg> <span data-i18n="skill6_title">Methodologies</span></h4><p data-i18n="skill6_desc">SDLC, Agile, Waterfall, ISTQB Testing Frameworks</p></div>
+            <div class="skill-card reveal d2"><h4><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a7 7 0 0 0-7 7c0 3 2 4 2 6v1h10v-1c0-2 2-3 2-6a7 7 0 0 0-7-7z"/><line x1="9" y1="21" x2="15" y2="21"/><line x1="10" y1="18" x2="14" y2="18"/></svg> <span data-i18n="skill5_title">AI &amp; Modern Development</span></h4><p data-i18n="skill5_desc">AI-Assisted Development, LLM Integration (Gemini AI), Prompt Engineering, AI Tools (ChatGPT, Claude, Cursor)</p></div>
+            <div class="skill-card reveal d3"><h4><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg> <span data-i18n="skill6_title">Testing, CI/CD &amp; Tools</span></h4><p data-i18n="skill6_desc">Git &amp; GitHub, CI/CD Fundamentals, Unit Testing, ISTQB, Android Studio, VS Code, Postman</p></div>
         </div>
     </div>
 </section>
@@ -707,8 +780,17 @@
         <h2 class="section-title reveal" data-i18n="title_experience">Experience</h2>
         <div class="timeline">
             <div class="timeline-item reveal">
-                <div class="timeline-date" data-i18n="exp1_date">December 2025 — March 2026 </div>
-                <h3 class="timeline-title" data-i18n="exp1_title">Mobile Developer Intern</h3>
+                <div class="timeline-date" data-i18n="exp0_date">January 2026 — June 2026</div>
+                <h3 class="timeline-title" data-i18n="exp0_title">Flutter Developer</h3>
+                <div class="timeline-org" data-i18n="exp0_org">EXPR-ERP · Egypt</div>
+                <div class="timeline-desc"><ul>
+                    <li data-i18n="exp0_desc1">Built and maintained ERP features using Flutter with Clean Architecture</li>
+                    <li data-i18n="exp0_desc2">Worked across Azure, Figma, and STG/DEV environments while ensuring code quality through unit testing</li>
+                </ul></div>
+            </div>
+            <div class="timeline-item reveal">
+                <div class="timeline-date" data-i18n="exp1_date">December 2025 — February 2026</div>
+                <h3 class="timeline-title" data-i18n="exp1_title">Flutter Developer Intern</h3>
                 <div class="timeline-org" data-i18n="exp1_org">NTI · Egypt</div>
                 <div class="timeline-desc"><ul>
                     <li data-i18n="exp1_desc1">Collaborated using GitHub (pull requests, code reviews, branching strategy, and team-based workflows) while applying Clean Architecture principles in Flutter projects</li>
@@ -717,7 +799,7 @@
             </div>
             <div class="timeline-item reveal">
                 <div class="timeline-date" data-i18n="exp2_date">August 2025 — February 2026</div>
-                <h3 class="timeline-title" data-i18n="exp2_title">Software Developing Intern</h3>
+                <h3 class="timeline-title" data-i18n="exp2_title">Software Development Intern</h3>
                 <div class="timeline-org" data-i18n="exp2_org">Dragons (Software with AI) · Egypt</div>
                 <div class="timeline-desc"><ul>
                     <li data-i18n="exp2_desc1">Applying AI technologies within real-world software projects</li>
@@ -726,7 +808,7 @@
             </div>
             <div class="timeline-item reveal">
                 <div class="timeline-date" data-i18n="exp3_date">July 2025 — August 2025</div>
-                <h3 class="timeline-title" data-i18n="exp3_title">Mobile Developer Intern</h3>
+                <h3 class="timeline-title" data-i18n="exp3_title">Flutter Developer Intern</h3>
                 <div class="timeline-org" data-i18n="exp3_org">Cellula Technologies · Egypt</div>
                 <div class="timeline-desc"><ul>
                     <li data-i18n="exp3_desc1">Developed cross-platform mobile applications using Flutter framework</li>
@@ -762,7 +844,7 @@
             </div>
             <div class="timeline-item reveal">
                 <div class="timeline-date" data-i18n="exp7_date">August 2024 — September 2024</div>
-                <h3 class="timeline-title" data-i18n="exp7_title">Mobile Developer Intern</h3>
+                <h3 class="timeline-title" data-i18n="exp7_title">Flutter Developer Intern</h3>
                 <div class="timeline-org" data-i18n="exp7_org">Mindset · Egypt</div>
                 <div class="timeline-desc"><ul>
                     <li data-i18n="exp7_desc1">Created user-friendly mobile applications with clean UI/UX design</li>
@@ -784,7 +866,7 @@
                 <div class="project-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
                 <span class="project-tag">Healthcare · Flutter</span>
                 <h3 class="project-title" data-i18n="proj1_title">Hen Lehen — Women-Only Medical Platform</h3>
-                <p class="project-desc" data-i18n="proj1_desc">Developed a women-only healthcare platform with separate patient and doctor applications. Implemented appointment booking, online medical chat, and clinic-based consultations with real-time data handling and role-based user flows.</p>
+                <p class="project-desc" data-i18n="proj1_desc"><strong style="color:var(--lightest-slate)">Problem:</strong> women-only healthcare access needed a trustworthy two-sided platform connecting patients and doctors in real time. <strong style="color:var(--lightest-slate)">Solution:</strong> built separate patient and doctor apps with appointment booking, online medical chat, clinic consultations, and an AI-powered chatbot for instant guidance, backed by Firebase auth and role-based data flows.</p>
                 <div class="tech-stack"><span class="tech-tag">Flutter</span><span class="tech-tag">Firebase</span><span class="tech-tag">Supabase</span><span class="tech-tag">Real-time Chat</span></div>
                 <div class="project-links">
                     <a href="https://github.com/menna3lwan/patient_app" target="_blank" class="project-link"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.5 11.5 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg> Patient App</a>
@@ -795,15 +877,15 @@
                 <div class="project-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="2.18"/><line x1="7" y1="2" x2="7" y2="22"/><line x1="17" y1="2" x2="17" y2="22"/><line x1="2" y1="12" x2="22" y2="12"/><line x1="2" y1="7" x2="7" y2="7"/><line x1="2" y1="17" x2="7" y2="17"/><line x1="17" y1="7" x2="22" y2="7"/><line x1="17" y1="17" x2="22" y2="17"/></svg></div>
                 <span class="project-tag">Entertainment · Flutter</span>
                 <h3 class="project-title" data-i18n="proj2_title">Movie App</h3>
-                <p class="project-desc" data-i18n="proj2_desc">Developed a scalable movie browsing application featuring popular, top-rated, and latest releases with dynamic state-driven UI updates. Implemented Clean Architecture with Repository Pattern and Dependency Injection, integrating RESTful APIs for modularity and production-ready performance.</p>
+                <p class="project-desc" data-i18n="proj2_desc"><strong style="color:var(--lightest-slate)">Problem:</strong> keep a growing Flutter codebase maintainable as features ship in parallel. <strong style="color:var(--lightest-slate)">Solution:</strong> architected a scalable movie browsing app with Clean Architecture, the Repository Pattern, and Dependency Injection, integrating REST APIs for a modular, production-ready structure.</p>
                 <div class="tech-stack"><span class="tech-tag">Flutter</span><span class="tech-tag">REST API</span><span class="tech-tag">State Management</span><span class="tech-tag">Clean Architecture</span><span class="tech-tag">DI</span></div>
                 <div class="project-links"><a href="https://github.com/menna3lwan/movie_app" target="_blank" class="project-link"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.5 11.5 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg> View on GitHub</a></div>
             </div>
             <div class="project-card reveal">
                 <div class="project-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div>
                 <span class="project-tag">Productivity · Flutter</span>
-                <h3 class="project-title" data-i18n="proj3_title">Taskatk App</h3>
-                <p class="project-desc" data-i18n="proj3_desc">Developed a task management mobile application with task creation, categorization, and real-time updates. Integrated Firebase and implemented push notifications with a streak tracking feature to increase user engagement.</p>
+                <h3 class="project-title" data-i18n="proj3_title">Tasky App</h3>
+                <p class="project-desc" data-i18n="proj3_desc"><strong style="color:var(--lightest-slate)">Problem:</strong> encourage consistent daily habit-building around task completion. <strong style="color:var(--lightest-slate)">Solution:</strong> built task creation, categorization, and real-time updates on Firebase, with push notifications and a streak-tracking feature to drive engagement.</p>
                 <div class="tech-stack"><span class="tech-tag">Flutter</span><span class="tech-tag">Firebase</span><span class="tech-tag">Push Notifications</span><span class="tech-tag">Streak Tracking</span></div>
                 <div class="project-links"><a href="https://github.com/menna3lwan/tasky_app" target="_blank" class="project-link"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.5 11.5 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg> View on GitHub</a></div>
             </div>
@@ -811,33 +893,68 @@
                 <div class="project-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg></div>
                 <span class="project-tag">E-Commerce · Flutter</span>
                 <h3 class="project-title" data-i18n="proj4_title">Fashion App</h3>
-                <p class="project-desc" data-i18n="proj4_desc">Built e-commerce fashion app with product browsing, wishlist management, and payment integration. Implemented order tracking with real-time push notifications.</p>
+                <p class="project-desc" data-i18n="proj4_desc"><strong style="color:var(--lightest-slate)">Problem:</strong> ship a complete e-commerce flow — browsing, wishlist, payment, order tracking — for a fashion retailer. <strong style="color:var(--lightest-slate)">Solution:</strong> built the Flutter client end-to-end with REST API integration and real-time push notifications for order updates.</p>
                 <div class="tech-stack"><span class="tech-tag">Flutter</span><span class="tech-tag">REST API</span><span class="tech-tag">Push Notifications</span></div>
                 <div class="project-links"><a href="https://github.com/menna3lwan/Fashion-Store" target="_blank" class="project-link"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.5 11.5 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg> View on GitHub</a></div>
             </div>
             <div class="project-card reveal">
-                <div class="project-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
-                <span class="project-tag">Productivity · Flutter</span>
-                <h3 class="project-title" data-i18n="proj5_title">Work Sync App</h3>
-                <p class="project-desc" data-i18n="proj5_desc">Developed task management application with team collaboration features. Integrated visual progress tracking tools and API synchronization.</p>
-                <div class="tech-stack"><span class="tech-tag">Flutter</span><span class="tech-tag">REST API</span><span class="tech-tag">State Management</span></div>
-                <div class="project-links"><a href="https://github.com/menna3lwan/WorkSync" target="_blank" class="project-link"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.5 11.5 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg> View on GitHub</a></div>
+                <div class="project-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v4M12 17v4M3 12h4M17 12h4M5.6 5.6l2.8 2.8M15.6 15.6l2.8 2.8M18.4 5.6l-2.8 2.8M8.4 15.6l-2.8 2.8"/><circle cx="12" cy="12" r="3"/></svg></div>
+                <span class="project-tag">AI · Flutter</span>
+                <h3 class="project-title" data-i18n="proj5_title">Weather Prediction AI App</h3>
+                <p class="project-desc" data-i18n="proj5_desc"><strong style="color:var(--lightest-slate)">Problem:</strong> help users decide, at a glance, whether it's safe to go ahead with outdoor plans. <strong style="color:var(--lightest-slate)">Solution:</strong> integrated a Flutter client with an AI model and a live weather API, turning real-time forecast data into a simple go/no-go recommendation — an end-to-end AI and data-pipeline exercise.</p>
+                <div class="tech-stack"><span class="tech-tag">Flutter</span><span class="tech-tag">AI/ML</span><span class="tech-tag">REST API</span></div>
+                <div class="project-links"><span class="project-note" data-i18n="proj_private">Private repository</span></div>
             </div>
             <div class="project-card reveal">
                 <div class="project-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 20H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v1m2 13a2 2 0 0 1-2-2V7m2 13a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-2"/></svg></div>
                 <span class="project-tag">News · Android</span>
                 <h3 class="project-title" data-i18n="proj6_title">News App</h3>
-                <p class="project-desc" data-i18n="proj6_desc">Built real-time news application with personalized recommendations and Firebase integration. Delivers breaking news with smart filtering and category-based browsing.</p>
+                <p class="project-desc" data-i18n="proj6_desc"><strong style="color:var(--lightest-slate)">Problem:</strong> deliver breaking news without overwhelming the reader. <strong style="color:var(--lightest-slate)">Solution:</strong> built a real-time Android news client with Firebase-backed personalized recommendations and smart, category-based filtering.</p>
                 <div class="tech-stack"><span class="tech-tag">Android</span><span class="tech-tag">Kotlin</span><span class="tech-tag">Firebase</span></div>
                 <div class="project-links"><a href="https://github.com/menna3lwan/news_app" target="_blank" class="project-link"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.5 11.5 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg> View on GitHub</a></div>
             </div>
             <div class="project-card reveal">
-                <div class="project-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1"/><path d="M9 14l2 2 4-4"/></svg></div>
-                <span class="project-tag">Utility · Android</span>
-                <h3 class="project-title" data-i18n="proj7_title">Contact App</h3>
-                <p class="project-desc" data-i18n="proj7_desc">Developed contact management app with cloud sync, group management, and direct calling features. Seamlessly integrates with Firebase for cross-device synchronization.</p>
-                <div class="tech-stack"><span class="tech-tag">Android</span><span class="tech-tag">Java</span><span class="tech-tag">Firebase</span></div>
-                <div class="project-links"><a href="https://github.com/menna3lwan/Contact-App" target="_blank" class="project-link"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.5 11.5 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg> View on GitHub</a></div>
+                <div class="project-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v4M12 17v4M3 12h4M17 12h4M5.6 5.6l2.8 2.8M15.6 15.6l2.8 2.8M18.4 5.6l-2.8 2.8M8.4 15.6l-2.8 2.8"/><circle cx="12" cy="12" r="3"/></svg></div>
+                <span class="project-tag">AI · Flutter</span>
+                <h3 class="project-title" data-i18n="proj7_title">Meal Recommendation App</h3>
+                <p class="project-desc" data-i18n="proj7_desc"><strong style="color:var(--lightest-slate)">Problem:</strong> generic meal plans ignore a user's goals and what's actually in their kitchen. <strong style="color:var(--lightest-slate)">Solution:</strong> built a Flutter app on Gemini AI that turns stated goals and available ingredients into personalized recipe recommendations — a practical exercise in LLM integration on mobile.</p>
+                <div class="tech-stack"><span class="tech-tag">Flutter</span><span class="tech-tag">Gemini AI</span><span class="tech-tag">LLM Integration</span></div>
+                <div class="project-links"><span class="project-note" data-i18n="proj_private">Private repository</span></div>
+            </div>
+        </div>
+    </div>
+</section>
+<div class="divider"></div>
+
+<!-- OPEN SOURCE -->
+<section id="opensource">
+    <div class="container">
+        <span class="section-label reveal"><span data-i18n="label_opensource">06. Community</span></span>
+        <h2 class="section-title reveal" data-i18n="title_opensource">Open Source</h2>
+        <div class="projects-grid">
+            <div class="project-card reveal" style="grid-column:1/-1">
+                <div class="project-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 3v12"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="6" r="3"/><path d="M18 9a9 9 0 0 1-9 9"/></svg></div>
+                <span class="project-tag" data-i18n="os_pr_tag">Open Pull Request &middot; 745★ Flutter Package</span>
+                <h3 class="project-title" data-i18n="os_pr_title">bosskmk/pluto_grid — Fixed a State-Notification Bug</h3>
+                <p class="project-desc" data-i18n="os_pr_desc"><strong style="color:var(--lightest-slate)">Root cause:</strong> <code>setConfiguration()</code> and <code>setTextDirection()</code> updated the grid's internal state but never called <code>notifyListeners()</code>, so RTL/LTR and configuration changes silently failed to rebuild dependent cells. <strong style="color:var(--lightest-slate)">Fix:</strong> a lifecycle-aware notification strategy — immediate for build-safe calls, deferred via <code>notifyListenersOnPostFrame()</code> where notifying mid-build would violate Flutter's build-phase rules — matching the package's existing patterns with zero API changes.</p>
+                <div class="tech-stack"><span class="tech-tag">Flutter</span><span class="tech-tag">Dart</span><span class="tech-tag">State Management</span><span class="tech-tag">Root Cause Analysis</span></div>
+                <div class="project-links">
+                    <a href="https://github.com/bosskmk/pluto_grid/pull/1165" target="_blank" class="project-link"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.5 11.5 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg> <span data-i18n="os_pr_link">View Pull Request</span></a>
+                </div>
+            </div>
+        </div>
+        <div class="achievements-grid" style="margin-top:1.5rem">
+            <div class="achievement-card reveal">
+                <div class="achievement-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg></div>
+                <div class="achievement-title" data-i18n="os_pullshark_title">Pull Shark</div>
+                <div class="achievement-org" data-i18n="os_pullshark_org">GitHub Achievement</div>
+                <div class="achievement-date" data-i18n="os_pullshark_date">Awarded for merged pull requests on other repositories</div>
+            </div>
+            <div class="achievement-card reveal">
+                <div class="achievement-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+                <div class="achievement-title" data-i18n="os_contrib_title">Active Contributor</div>
+                <div class="achievement-org" data-i18n="os_contrib_org">github.com/menna3lwan</div>
+                <div class="achievement-date" data-i18n="os_contrib_date">Public repositories maintained with docs, architecture notes, and demos</div>
             </div>
         </div>
     </div>
@@ -847,7 +964,7 @@
 <!-- ACHIEVEMENTS -->
 <section id="achievements">
     <div class="container">
-        <span class="section-label reveal"><span data-i18n="label_achievements">06. Recognition</span></span>
+        <span class="section-label reveal"><span data-i18n="label_achievements">07. Recognition</span></span>
         <h2 class="section-title reveal" data-i18n="title_achievements">Achievements</h2>
         <div class="achievements-grid">
             <div class="achievement-card reveal">
@@ -876,7 +993,7 @@
 <!-- CONTACT -->
 <section id="contact" class="contact-section">
     <div class="container">
-        <span class="section-label reveal"><span data-i18n="label_contact">07. What's Next?</span></span>
+        <span class="section-label reveal"><span data-i18n="label_contact">08. What's Next?</span></span>
         <h2 class="contact-title reveal" data-i18n="title_contact">Let's Work Together</h2>
         <p class="contact-desc reveal" data-i18n="contact_desc">
             I'm actively seeking opportunities in <strong style="color:var(--orange)">Flutter Development</strong> and <strong style="color:var(--orange)">Mobile AI Integration</strong>. Whether it's an internship, a freelance project, or a full-time position — I'd love to hear from you.
@@ -904,36 +1021,39 @@
 const translations = {
     en: {
         nav_about: 'About', nav_skills: 'Skills', nav_education: 'Education',
-        nav_experience: 'Experience', nav_projects: 'Projects', nav_achievements: 'Achievements', nav_contact: 'Contact',
+        nav_experience: 'Experience', nav_projects: 'Projects', nav_opensource: 'Open Source', nav_achievements: 'Achievements', nav_contact: 'Contact',
         theme_dark: 'Dark', theme_light: 'Light', theme_comfort: 'Eye Comfort',
         hero_greeting: 'Hi, my name is',
-        hero_tagline: 'Flutter Developer \u00b7 Mobile Application Developer',
-        hero_badge: 'Flutter Developer',
-        hero_desc: 'Skilled Mobile Developer specializing in <strong style="color:var(--orange)">Flutter &amp; Dart</strong> for cross-platform mobile applications. Proficient in performance optimization, backend integration, REST APIs, and mobile UI/UX design. Strong knowledge of <strong style="color:var(--lightest-slate)">SDLC, Agile methodologies, and software testing (ISTQB)</strong>.',
-        stat_internships: 'Internships', stat_projects: 'Projects', stat_rank: 'Nationwide Rank DEPI', stat_exp: 'Years Exp.',
+        hero_tagline: 'Software Developer \u00b7 Flutter Engineer',
+        hero_badge: 'Flutter Engineer',
+        hero_desc: 'Software Developer whose primary focus is <strong style="color:var(--orange)">Flutter &amp; Dart</strong>, building scalable cross-platform applications guided by <strong style="color:var(--lightest-slate)">Clean Architecture and SOLID principles</strong>. Experienced in Firebase/REST backend integration, AI-assisted development, and open-source contribution, with a strong foundation in <strong style="color:var(--lightest-slate)">SDLC, Agile, and software testing (ISTQB)</strong>.',
+        stat_internships: 'Professional Roles', stat_projects: 'Projects', stat_rank: 'Nationwide Rank DEPI', stat_exp: 'Years Exp.',
         cta_projects: 'View Projects', cta_contact: 'Get In Touch', cta_email: 'Email Me', cta_hello: 'Say Hello',
         label_about: '01. About Me', title_about: 'Who I Am',
-        about_text: 'I\'m a Computer Science and Artificial Intelligence student at <strong>Benha University</strong> with a passion for building elegant, performant mobile applications. With hands-on experience in <strong>Flutter &amp; Dart</strong>, I bridge the gap between design and engineering to create apps users love. Ranked <strong>7th nationwide</strong> in the Mobile Development track DEPI, I\'m driven to contribute to innovative mobile projects.',
+        about_text: 'I\'m a Software Developer whose primary focus is <strong>Flutter</strong> \u2014 building scalable, maintainable mobile applications guided by <strong>Clean Architecture and SOLID principles</strong> rather than just shipping features. I\'m also a Computer Science &amp; AI student at <strong>Benha University</strong>, ranked <strong>7th nationwide</strong> in DEPI\'s Mobile Development track. That foundation shows up in how I work: clear separation of concerns, disciplined state management, and a growing open-source contribution to packages other developers depend on.',
         info_name: 'Name:', info_phone: 'Phone:', info_email: 'Email:', info_location: 'Location:', info_location_val: 'Al-Qaliobia, Egypt',
         label_skills: '02. Capabilities', title_skills: 'Technical Expertise',
-        skill1_title: 'Mobile Development', skill1_desc: 'Flutter, Android SDK, iOS Development, Cross-Platform Development, Native Android',
-        skill2_title: 'Programming Languages', skill2_desc: 'Dart, Flutter, Kotlin, Java, Python, C++, C',
-        skill3_title: 'Architecture & Patterns', skill3_desc: 'MVVM, MVI, Clean Architecture, State Management (Provider, Riverpod, BLoC)',
+        skill1_title: 'Software Engineering & Architecture', skill1_desc: 'Clean Architecture, SOLID Principles, Design Patterns (MVVM, MVI, Repository), System Design',
+        skill2_title: 'Flutter & Mobile Development', skill2_desc: 'Flutter, Dart, Android SDK, iOS Development, Cross-Platform Apps',
+        skill3_title: 'State Management', skill3_desc: 'Bloc / Cubit, Provider, Riverpod',
         skill4_title: 'Backend & APIs', skill4_desc: 'REST API Integration, Firebase (Authentication, Firestore, Cloud Messaging)',
-        skill5_title: 'Tools & Technologies', skill5_desc: 'Git, GitHub, Android Studio, VS Code, Postman, UI/UX Design',
-        skill6_title: 'Methodologies', skill6_desc: 'SDLC, Agile, Waterfall, ISTQB Testing Frameworks',
+        skill5_title: 'AI & Modern Development', skill5_desc: 'AI-Assisted Development, LLM Integration (Gemini AI), Prompt Engineering, AI Tools (ChatGPT, Claude, Cursor)',
+        skill6_title: 'Testing, CI/CD & Tools', skill6_desc: 'Git & GitHub, CI/CD Fundamentals, Unit Testing, ISTQB, Android Studio, VS Code, Postman',
         label_education: '03. Background', title_education: 'Education',
         edu_date: 'August 2022 \u2014 Present', edu_title: 'Bachelor of Computer Science and Artificial Intelligence', edu_org: 'Benha University',
         edu_desc1: 'Gaining hands-on experience in software engineering through coursework and projects',
         edu_desc2: 'Collaborating on projects involving coding, testing, and debugging software solutions',
         label_experience: '04. Career', title_experience: 'Experience',
-        exp1_date: 'December 2025 \u2014 March 2026 ', exp1_title: 'Mobile Developer Intern', exp1_org: 'NTI \u00b7 Egypt',
+        exp0_date: 'January 2026 \u2014 June 2026', exp0_title: 'Flutter Developer', exp0_org: 'EXPR-ERP \u00b7 Egypt',
+        exp0_desc1: 'Built and maintained ERP features using Flutter with Clean Architecture',
+        exp0_desc2: 'Worked across Azure, Figma, and STG/DEV environments while ensuring code quality through unit testing',
+        exp1_date: 'December 2025 \u2014 February 2026', exp1_title: 'Flutter Developer Intern', exp1_org: 'NTI \u00b7 Egypt',
         exp1_desc1: 'Collaborated using GitHub (pull requests, code reviews, branching strategy, and team-based workflows) while applying Clean Architecture principles in Flutter projects',
         exp1_desc2: 'Implemented unit testing and contributed to structured feature development within a scalable, maintainable architecture',
-        exp2_date: 'August 2025 \u2014 February 2026', exp2_title: 'Software Developing Intern', exp2_org: 'Dragons (Software with AI) \u00b7 Egypt',
+        exp2_date: 'August 2025 \u2014 February 2026', exp2_title: 'Software Development Intern', exp2_org: 'Dragons (Software with AI) \u00b7 Egypt',
         exp2_desc1: 'Applying AI technologies within real-world software projects',
         exp2_desc2: 'Developing innovative mobile solutions integrating artificial intelligence capabilities',
-        exp3_date: 'July 2025 \u2014 August 2025', exp3_title: 'Mobile Developer Intern', exp3_org: 'Cellula Technologies \u00b7 Egypt',
+        exp3_date: 'July 2025 \u2014 August 2025', exp3_title: 'Flutter Developer Intern', exp3_org: 'Cellula Technologies \u00b7 Egypt',
         exp3_desc1: 'Developed cross-platform mobile applications using Flutter framework',
         exp3_desc2: 'Implemented REST API integration and optimized application performance',
         exp4_date: 'February 2025 \u2014 April 2025', exp4_title: 'Software Development Intern', exp4_org: 'Fuzetek \u00b7 Egypt',
@@ -945,66 +1065,77 @@ const translations = {
         exp6_date: 'February 2024 \u2014 December 2024', exp6_title: 'Coding Instructor', exp6_org: 'Almentor \u00b7 Egypt',
         exp6_desc1: 'Taught programming fundamentals and problem-solving techniques to students',
         exp6_desc2: 'Designed and delivered structured courses covering algorithms and data structures',
-        exp7_date: 'August 2024 \u2014 September 2024', exp7_title: 'Mobile Developer Intern', exp7_org: 'Mindset \u00b7 Egypt',
+        exp7_date: 'August 2024 \u2014 September 2024', exp7_title: 'Flutter Developer Intern', exp7_org: 'Mindset \u00b7 Egypt',
         exp7_desc1: 'Created user-friendly mobile applications with clean UI/UX design',
         exp7_desc2: 'Implemented state management techniques using Provider and Riverpod',
         label_projects: '05. Portfolio', title_projects: 'Featured Projects',
         proj1_title: 'Hen Lehen \u2014 Women-Only Medical Platform',
-        proj1_desc: 'Developed a women-only healthcare platform with separate patient and doctor applications. Implemented appointment booking, online medical chat, and clinic-based consultations with real-time data handling and role-based user flows.',
+        proj1_desc: '<strong style="color:var(--lightest-slate)">Problem:</strong> women-only healthcare access needed a trustworthy two-sided platform connecting patients and doctors in real time. <strong style="color:var(--lightest-slate)">Solution:</strong> built separate patient and doctor apps with appointment booking, online medical chat, clinic consultations, and an AI-powered chatbot for instant guidance, backed by Firebase auth and role-based data flows.',
         proj2_title: 'Movie App',
-        proj2_desc: 'Developed a scalable movie browsing application featuring popular, top-rated, and latest releases with dynamic state-driven UI updates. Implemented Clean Architecture with Repository Pattern and Dependency Injection, integrating RESTful APIs for modularity and production-ready performance.',
-        proj3_title: 'Taskatk App',
-        proj3_desc: 'Developed a task management mobile application with task creation, categorization, and real-time updates. Integrated Firebase and implemented push notifications with a streak tracking feature to increase user engagement.',
+        proj2_desc: '<strong style="color:var(--lightest-slate)">Problem:</strong> keep a growing Flutter codebase maintainable as features ship in parallel. <strong style="color:var(--lightest-slate)">Solution:</strong> architected a scalable movie browsing app with Clean Architecture, the Repository Pattern, and Dependency Injection, integrating REST APIs for a modular, production-ready structure.',
+        proj3_title: 'Tasky App',
+        proj3_desc: '<strong style="color:var(--lightest-slate)">Problem:</strong> encourage consistent daily habit-building around task completion. <strong style="color:var(--lightest-slate)">Solution:</strong> built task creation, categorization, and real-time updates on Firebase, with push notifications and a streak-tracking feature to drive engagement.',
         proj4_title: 'Fashion App',
-        proj4_desc: 'Built e-commerce fashion app with product browsing, wishlist management, and payment integration. Implemented order tracking with real-time push notifications.',
-        proj5_title: 'Work Sync App',
-        proj5_desc: 'Developed task management application with team collaboration features. Integrated visual progress tracking tools and API synchronization.',
+        proj4_desc: '<strong style="color:var(--lightest-slate)">Problem:</strong> ship a complete e-commerce flow \u2014 browsing, wishlist, payment, order tracking \u2014 for a fashion retailer. <strong style="color:var(--lightest-slate)">Solution:</strong> built the Flutter client end-to-end with REST API integration and real-time push notifications for order updates.',
+        proj5_title: 'Weather Prediction AI App',
+        proj5_desc: '<strong style="color:var(--lightest-slate)">Problem:</strong> help users decide, at a glance, whether it\'s safe to go ahead with outdoor plans. <strong style="color:var(--lightest-slate)">Solution:</strong> integrated a Flutter client with an AI model and a live weather API, turning real-time forecast data into a simple go/no-go recommendation \u2014 an end-to-end AI and data-pipeline exercise.',
         proj6_title: 'News App',
-        proj6_desc: 'Built real-time news application with personalized recommendations and Firebase integration. Delivers breaking news with smart filtering and category-based browsing.',
-        proj7_title: 'Contact App',
-        proj7_desc: 'Developed contact management app with cloud sync, group management, and direct calling features. Seamlessly integrates with Firebase for cross-device synchronization.',
-        label_achievements: '06. Recognition', title_achievements: 'Achievements',
+        proj6_desc: '<strong style="color:var(--lightest-slate)">Problem:</strong> deliver breaking news without overwhelming the reader. <strong style="color:var(--lightest-slate)">Solution:</strong> built a real-time Android news client with Firebase-backed personalized recommendations and smart, category-based filtering.',
+        proj7_title: 'Meal Recommendation App',
+        proj7_desc: '<strong style="color:var(--lightest-slate)">Problem:</strong> generic meal plans ignore a user\'s goals and what\'s actually in their kitchen. <strong style="color:var(--lightest-slate)">Solution:</strong> built a Flutter app on Gemini AI that turns stated goals and available ingredients into personalized recipe recommendations \u2014 a practical exercise in LLM integration on mobile.',
+        proj_private: 'Private repository',
+        label_opensource: '06. Community', title_opensource: 'Open Source',
+        os_pr_tag: 'Open Pull Request \u00b7 745\u2605 Flutter Package',
+        os_pr_title: 'bosskmk/pluto_grid \u2014 Fixed a State-Notification Bug',
+        os_pr_desc: '<strong style="color:var(--lightest-slate)">Root cause:</strong> <code>setConfiguration()</code> and <code>setTextDirection()</code> updated the grid\'s internal state but never called <code>notifyListeners()</code>, so RTL/LTR and configuration changes silently failed to rebuild dependent cells. <strong style="color:var(--lightest-slate)">Fix:</strong> a lifecycle-aware notification strategy \u2014 immediate for build-safe calls, deferred via <code>notifyListenersOnPostFrame()</code> where notifying mid-build would violate Flutter\'s build-phase rules \u2014 matching the package\'s existing patterns with zero API changes.',
+        os_pr_link: 'View Pull Request',
+        os_pullshark_title: 'Pull Shark', os_pullshark_org: 'GitHub Achievement', os_pullshark_date: 'Awarded for merged pull requests on other repositories',
+        os_contrib_title: 'Active Contributor', os_contrib_org: 'github.com/menna3lwan', os_contrib_date: 'Public repositories maintained with docs, architecture notes, and demos',
+        label_achievements: '07. Recognition', title_achievements: 'Achievements',
         ach1_title: '7th Place Nationwide', ach1_org: 'Mobile Development Track DEPI', ach1_date: 'Ministry of Communication & Information Technology \u00b7 December 2024',
         ach2_title: 'ECPC Participant', ach2_org: 'Egyptian Collegiate Programming Contest',
         ach3_title: 'ISTQB Knowledge', ach3_org: 'Software Testing Frameworks', ach3_date: 'Applied in Professional Internships',
-        label_contact: '07. What\'s Next?', title_contact: 'Let\'s Work Together',
+        label_contact: '08. What\'s Next?', title_contact: 'Let\'s Work Together',
         contact_desc: 'I\'m actively seeking opportunities in <strong style="color:var(--orange)">Flutter Development</strong> and <strong style="color:var(--orange)">Mobile AI Integration</strong>. Whether it\'s an internship, a freelance project, or a full-time position \u2014 I\'d love to hear from you.',
         contact_email_label: 'Email', contact_phone_label: 'Phone',
         footer_text: 'Built with passion for mobile technology.',
-        typed_strings: ['Cross-Platform App Developer','Flutter & Dart Specialist','Clean Architecture Enthusiast','Firebase Integration Expert']
+        typed_strings: ['Software Developer','Flutter & Dart Specialist','Clean Architecture & SOLID','Open Source Contributor']
     },
     ar: {
         nav_about: 'عنّي', nav_skills: 'المهارات', nav_education: 'التعليم',
-        nav_experience: 'الخبرات', nav_projects: 'المشاريع', nav_achievements: 'الإنجازات', nav_contact: 'تواصل',
+        nav_experience: 'الخبرات', nav_projects: 'المشاريع', nav_opensource: 'المصادر المفتوحة', nav_achievements: 'الإنجازات', nav_contact: 'تواصل',
         theme_dark: 'داكن', theme_light: 'فاتح', theme_comfort: 'مريح للعين',
         hero_greeting: 'أهلاً، أنا',
-        hero_tagline: 'مطوّرة Flutter · مطوّرة تطبيقات موبايل',
-        hero_badge: 'Flutter مطوّرة',
-        hero_desc: 'مطوّرة موبايل متخصصة في <strong style="color:var(--orange)">Flutter و Dart</strong> لتطبيقات الموبايل Cross-platform. خبرة في تحسين الأداء، ربط الـ Backend، الـ REST APIs، وتصميم الـ UI/UX. معرفة قوية بـ <strong style="color:var(--lightest-slate)">SDLC، منهجيات Agile، واختبار البرمجيات (ISTQB)</strong>.',
-        stat_internships: 'تدريبات', stat_projects: 'مشاريع', stat_rank: 'ترتيب على مستوى الجمهورية DEPI', stat_exp: 'سنين خبرة',
+        hero_tagline: 'Software Developer · مهندسة Flutter',
+        hero_badge: 'مهندسة Flutter',
+        hero_desc: 'Software Developer تركيزي الأساسي على <strong style="color:var(--orange)">Flutter و Dart</strong>، بابني تطبيقات Cross-platform قابلة للتوسع بالاعتماد على <strong style="color:var(--lightest-slate)">Clean Architecture ومبادئ SOLID</strong>. عندي خبرة في ربط Firebase/REST، الـ AI-assisted development، والمساهمة في مصادر مفتوحة، مع أساس قوي في <strong style="color:var(--lightest-slate)">SDLC، منهجيات Agile، واختبار البرمجيات (ISTQB)</strong>.',
+        stat_internships: 'خبرات مهنية', stat_projects: 'مشاريع', stat_rank: 'ترتيب على مستوى الجمهورية DEPI', stat_exp: 'سنين خبرة',
         cta_projects: 'شوف المشاريع', cta_contact: 'تواصل معايا', cta_email: 'ابعتلي إيميل', cta_hello: 'قول أهلاً',
         label_about: '٠١. عنّي', title_about: 'مين أنا',
-        about_text: 'أنا طالبة في كلية الحاسبات والذكاء الاصطناعي بـ <strong>جامعة بنها</strong>، بحب أبني تطبيقات موبايل أنيقة وسريعة. عندي خبرة عملية في <strong>Flutter و Dart</strong>، وبربط بين التصميم والبرمجة عشان أعمل تطبيقات الناس تحبها. ترتيبي <strong>السابع على مستوى الجمهورية</strong> في مسار تطوير الموبايل DEPI.',
+        about_text: 'أنا Software Developer تركيزي الأساسي على <strong>Flutter</strong> — بابني تطبيقات موبايل قابلة للتوسع وسهلة الصيانة بالاعتماد على <strong>Clean Architecture ومبادئ SOLID</strong>، مش مجرد تنفيذ Features. وكمان طالبة في كلية الحاسبات والذكاء الاصطناعي بـ <strong>جامعة بنها</strong>، ترتيبي <strong>السابع على مستوى الجمهورية</strong> في مسار تطوير الموبايل DEPI. ده بينعكس في طريقة شغلي: فصل واضح للمسؤوليات، إدارة حالة منضبطة، ومساهمة متنامية في مصادر مفتوحة بيستخدمها مطورين تانيين.',
         info_name: 'الاسم:', info_phone: 'الموبايل:', info_email: 'الإيميل:', info_location: 'المكان:', info_location_val: 'القليوبية، مصر',
         label_skills: '٠٢. القدرات', title_skills: 'الخبرات التقنية',
-        skill1_title: 'تطوير الموبايل', skill1_desc: 'Flutter, Android SDK, iOS Development, Cross-Platform, Native Android',
-        skill2_title: 'لغات البرمجة', skill2_desc: 'Dart, Flutter, Kotlin, Java, Python, C++, C',
-        skill3_title: 'الـ Architecture والأنماط', skill3_desc: 'MVVM, MVI, Clean Architecture, State Management (Provider, Riverpod, BLoC)',
+        skill1_title: 'هندسة البرمجيات والـ Architecture', skill1_desc: 'Clean Architecture, SOLID Principles, Design Patterns (MVVM, MVI, Repository), System Design',
+        skill2_title: 'Flutter وتطوير الموبايل', skill2_desc: 'Flutter, Dart, Android SDK, iOS Development, Cross-Platform Apps',
+        skill3_title: 'إدارة الحالة (State Management)', skill3_desc: 'Bloc / Cubit, Provider, Riverpod',
         skill4_title: 'الـ Backend والـ APIs', skill4_desc: 'REST API Integration, Firebase (Authentication, Firestore, Cloud Messaging)',
-        skill5_title: 'الأدوات والتقنيات', skill5_desc: 'Git, GitHub, Android Studio, VS Code, Postman, UI/UX Design',
-        skill6_title: 'المنهجيات', skill6_desc: 'SDLC, Agile, Waterfall, ISTQB Testing Frameworks',
+        skill5_title: 'الذكاء الاصطناعي والتطوير الحديث', skill5_desc: 'AI-Assisted Development, LLM Integration (Gemini AI), Prompt Engineering, AI Tools (ChatGPT, Claude, Cursor)',
+        skill6_title: 'الاختبار، CI/CD والأدوات', skill6_desc: 'Git & GitHub, CI/CD Fundamentals, Unit Testing, ISTQB, Android Studio, VS Code, Postman',
         label_education: '٠٣. الخلفية', title_education: 'التعليم',
         edu_date: 'أغسطس ٢٠٢٢ — الحالي', edu_title: 'بكالوريوس علوم الحاسب والذكاء الاصطناعي', edu_org: 'جامعة بنها',
         edu_desc1: 'اكتساب خبرة عملية في هندسة البرمجيات من خلال المناهج والمشاريع',
         edu_desc2: 'التعاون في مشاريع تشمل البرمجة والاختبار وتصحيح الأخطاء',
         label_experience: '٠٤. المسيرة المهنية', title_experience: 'الخبرات',
-        exp1_date: 'ديسمبر ٢٠٢٥ — مارس ٢٠٢٦', exp1_title: 'متدربة تطوير موبايل', exp1_org: 'NTI · مصر',
+        exp0_date: 'يناير ٢٠٢٦ — يونيو ٢٠٢٦', exp0_title: 'Flutter Developer', exp0_org: 'EXPR-ERP · مصر',
+        exp0_desc1: 'بناء وصيانة ميزات ERP باستخدام Flutter مع Clean Architecture',
+        exp0_desc2: 'العمل على بيئات Azure وFigma وSTG/DEV مع ضمان جودة الكود من خلال Unit Testing',
+        exp1_date: 'ديسمبر ٢٠٢٥ — فبراير ٢٠٢٦', exp1_title: 'متدربة Flutter Developer', exp1_org: 'NTI · مصر',
         exp1_desc1: 'التعاون باستخدام GitHub مع تطبيق مبادئ Clean Architecture في مشاريع Flutter',
         exp1_desc2: 'تنفيذ Unit Testing والمساهمة في تطوير Features منظمة ضمن بنية قابلة للتوسع',
         exp2_date: 'أغسطس ٢٠٢٥ — فبراير ٢٠٢٦', exp2_title: 'متدربة تطوير برمجيات', exp2_org: 'Dragons (Software with AI) · مصر',
         exp2_desc1: 'تطبيق تقنيات الذكاء الاصطناعي في مشاريع برمجية حقيقية',
         exp2_desc2: 'تطوير حلول موبايل مبتكرة تدمج قدرات الذكاء الاصطناعي',
-        exp3_date: 'يوليو ٢٠٢٥ — أغسطس ٢٠٢٥', exp3_title: 'متدربة تطوير موبايل', exp3_org: 'Cellula Technologies · مصر',
+        exp3_date: 'يوليو ٢٠٢٥ — أغسطس ٢٠٢٥', exp3_title: 'متدربة Flutter Developer', exp3_org: 'Cellula Technologies · مصر',
         exp3_desc1: 'تطوير تطبيقات موبايل Cross-platform باستخدام Flutter',
         exp3_desc2: 'تنفيذ ربط REST API وتحسين أداء التطبيقات',
         exp4_date: 'فبراير ٢٠٢٥ — أبريل ٢٠٢٥', exp4_title: 'متدربة تطوير برمجيات', exp4_org: 'Fuzetek · مصر',
@@ -1016,33 +1147,41 @@ const translations = {
         exp6_date: 'فبراير ٢٠٢٤ — ديسمبر ٢٠٢٤', exp6_title: 'مُدرِّسة برمجة', exp6_org: 'Almentor · مصر',
         exp6_desc1: 'تدريس أساسيات البرمجة وتقنيات حل المشكلات للطلاب',
         exp6_desc2: 'تصميم وتقديم كورسات منظمة تغطي الخوارزميات وهياكل البيانات',
-        exp7_date: 'أغسطس ٢٠٢٤ — سبتمبر ٢٠٢٤', exp7_title: 'متدربة تطوير موبايل', exp7_org: 'Mindset · مصر',
+        exp7_date: 'أغسطس ٢٠٢٤ — سبتمبر ٢٠٢٤', exp7_title: 'متدربة Flutter Developer', exp7_org: 'Mindset · مصر',
         exp7_desc1: 'إنشاء تطبيقات موبايل سهلة الاستخدام بتصميم UI/UX نظيف',
         exp7_desc2: 'تنفيذ تقنيات State Management باستخدام Provider و Riverpod',
         label_projects: '٠٥. الأعمال', title_projects: 'مشاريع مميزة',
         proj1_title: 'هن لهن — منصة طبية للنساء فقط',
-        proj1_desc: 'تطوير منصة رعاية صحية للنساء فقط بتطبيقات منفصلة للمرضى والأطباء. تنفيذ حجز المواعيد، الشات الطبي أونلاين، والاستشارات في العيادات مع معالجة بيانات لحظية.',
+        proj1_desc: '<strong style="color:var(--lightest-slate)">المشكلة:</strong> الرعاية الصحية للنساء فقط محتاجة منصة موثوقة تربط المريضة بالدكتورة لحظيًا. <strong style="color:var(--lightest-slate)">الحل:</strong> بناء تطبيقين منفصلين للمريضة والدكتورة بحجز مواعيد، شات طبي، استشارات عيادة، وChatbot بالذكاء الاصطناعي، مع Firebase Auth وتدفقات بيانات حسب الدور.',
         proj2_title: 'تطبيق الأفلام',
-        proj2_desc: 'تطوير تطبيق قابل للتوسع لتصفح الأفلام يعرض الشائعة والأعلى تقييمًا وأحدث الإصدارات. تطبيق Clean Architecture مع Repository Pattern و Dependency Injection.',
-        proj3_title: 'تطبيق تسكاتك',
-        proj3_desc: 'تطوير تطبيق إدارة مهام بإنشاء وتصنيف المهام وتحديثات لحظية. ربط Firebase مع إشعارات Push وخاصية تتبع الـ Streak.',
+        proj2_desc: '<strong style="color:var(--lightest-slate)">المشكلة:</strong> الحفاظ على قابلية صيانة كود Flutter مع نمو الفريق والميزات. <strong style="color:var(--lightest-slate)">الحل:</strong> بناء تطبيق تصفح أفلام قابل للتوسع بـ Clean Architecture وRepository Pattern وDependency Injection، مع REST APIs لبنية Modular جاهزة للإنتاج.',
+        proj3_title: 'تطبيق Tasky',
+        proj3_desc: '<strong style="color:var(--lightest-slate)">المشكلة:</strong> تشجيع المستخدم على الالتزام اليومي بإنجاز مهامه. <strong style="color:var(--lightest-slate)">الحل:</strong> بناء إنشاء وتصنيف مهام وتحديثات لحظية على Firebase، مع إشعارات Push وخاصية Streak لزيادة التفاعل.',
         proj4_title: 'تطبيق الفاشن',
-        proj4_desc: 'بناء تطبيق فاشن للتجارة الإلكترونية بتصفح المنتجات، إدارة قائمة الأمنيات، ودمج الدفع. تتبع الطلبات مع إشعارات Push لحظية.',
-        proj5_title: 'تطبيق Work Sync',
-        proj5_desc: 'تطوير تطبيق إدارة مهام بخصائص التعاون الجماعي. دمج أدوات تتبع التقدم البصري ومزامنة الـ API.',
+        proj4_desc: '<strong style="color:var(--lightest-slate)">المشكلة:</strong> تقديم تجربة تجارة إلكترونية كاملة — تصفح، قائمة أمنيات، دفع، تتبع طلب — لمتجر أزياء. <strong style="color:var(--lightest-slate)">الحل:</strong> بناء تطبيق Flutter متكامل مع REST API وإشعارات Push لحظية لتحديثات الطلب.',
+        proj5_title: 'تطبيق توقع الطقس بالذكاء الاصطناعي',
+        proj5_desc: '<strong style="color:var(--lightest-slate)">المشكلة:</strong> مساعدة المستخدم يقرر بسرعة هل آمن يكمل خطته الخارجية ولا لأ. <strong style="color:var(--lightest-slate)">الحل:</strong> ربط تطبيق Flutter بنموذج ذكاء اصطناعي وAPI طقس لحظي، وتحويل بيانات التوقع لتوصية بسيطة — تمرين شامل في AI وData Pipeline.',
         proj6_title: 'تطبيق الأخبار',
-        proj6_desc: 'بناء تطبيق أخبار لحظي بتوصيات مخصصة وربط Firebase. يقدم الأخبار العاجلة مع فلترة ذكية وتصفح حسب الفئات.',
-        proj7_title: 'تطبيق جهات الاتصال',
-        proj7_desc: 'تطوير تطبيق إدارة جهات اتصال بمزامنة سحابية وإدارة المجموعات والاتصال المباشر. ربط سلس مع Firebase للمزامنة بين الأجهزة.',
-        label_achievements: '٠٦. الإنجازات', title_achievements: 'الإنجازات',
+        proj6_desc: '<strong style="color:var(--lightest-slate)">المشكلة:</strong> تقديم الأخبار العاجلة من غير ما يحصل إغراق للقارئ بالمعلومات. <strong style="color:var(--lightest-slate)">الحل:</strong> بناء تطبيق أخبار Android لحظي بتوصيات مخصصة مبنية على Firebase وفلترة ذكية حسب الفئة.',
+        proj7_title: 'تطبيق توصية الوجبات',
+        proj7_desc: '<strong style="color:var(--lightest-slate)">المشكلة:</strong> خطط الأكل العامة بتتجاهل أهداف المستخدم والمكونات المتاحة فعليًا. <strong style="color:var(--lightest-slate)">الحل:</strong> بناء تطبيق Flutter على Gemini AI بيحوّل الأهداف والمكونات المتاحة لتوصيات وصفات مخصصة — تمرين عملي في دمج LLM على الموبايل.',
+        proj_private: 'مستودع خاص',
+        label_opensource: '٠٦. المجتمع', title_opensource: 'المصادر المفتوحة',
+        os_pr_tag: 'Pull Request مفتوح · حزمة Flutter بـ ٧٤٥ نجمة',
+        os_pr_title: 'bosskmk/pluto_grid — إصلاح خلل في إشعارات الحالة',
+        os_pr_desc: '<strong style="color:var(--lightest-slate)">السبب الجذري:</strong> الدالتان <code>setConfiguration()</code> و<code>setTextDirection()</code> كانتا بتحدّثوا حالة الـ Grid الداخلية من غير ما يستدعوا <code>notifyListeners()</code>، فتغييرات RTL/LTR والإعدادات كانت بتفشل بصمت في تحديث الخلايا المعتمدة عليها. <strong style="color:var(--lightest-slate)">الحل:</strong> استراتيجية إشعار مبنية على دورة حياة الـ Widget — فورية للاستدعاءات الآمنة، ومؤجّلة عبر <code>notifyListenersOnPostFrame()</code> لما الإشعار أثناء الـ build يكسر قواعد Flutter — بما يتماشى مع أنماط الحزمة الحالية وبدون أي تغيير في الـ API.',
+        os_pr_link: 'عرض Pull Request',
+        os_pullshark_title: 'Pull Shark', os_pullshark_org: 'إنجاز GitHub', os_pullshark_date: 'مُنح مقابل Pull Requests مدموجة في مستودعات أخرى',
+        os_contrib_title: 'مساهمة نشطة', os_contrib_org: 'github.com/menna3lwan', os_contrib_date: 'مستودعات عامة موثّقة بشروحات ومعمارية وعروض تجريبية',
+        label_achievements: '٠٧. الإنجازات', title_achievements: 'الإنجازات',
         ach1_title: 'المركز السابع على مستوى الجمهورية', ach1_org: 'مسار تطوير الموبايل DEPI', ach1_date: 'وزارة الاتصالات وتكنولوجيا المعلومات · ديسمبر ٢٠٢٤',
         ach2_title: 'مشارِكة في ECPC', ach2_org: 'المسابقة المصرية الجامعية للبرمجة',
         ach3_title: 'معرفة ISTQB', ach3_org: 'أُطر اختبار البرمجيات', ach3_date: 'مُطبّقة في التدريبات المهنية',
-        label_contact: '٠٧. إيه الجديد؟', title_contact: 'يلّا نشتغل مع بعض',
+        label_contact: '٠٨. إيه الجديد؟', title_contact: 'يلّا نشتغل مع بعض',
         contact_desc: 'بدوّر على فرص في <strong style="color:var(--orange)">تطوير Flutter</strong> و <strong style="color:var(--orange)">دمج الذكاء الاصطناعي في الموبايل</strong>. سواء تدريب، مشروع فريلانس، أو وظيفة — يسعدني أسمع منك.',
         contact_email_label: 'الإيميل', contact_phone_label: 'الموبايل',
         footer_text: 'مبنية بحب لتكنولوجيا الموبايل.',
-        typed_strings: ['مطوّرة تطبيقات Cross-Platform','متخصصة Flutter و Dart','Clean Architecture Enthusiast','خبيرة ربط Firebase']
+        typed_strings: ['Software Developer','متخصصة Flutter و Dart','Clean Architecture و SOLID','مساهمة في مصادر مفتوحة']
     }
 };
 
