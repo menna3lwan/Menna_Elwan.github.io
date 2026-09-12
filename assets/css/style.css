@@ -431,26 +431,29 @@ section {
 }
 
 .brand-mark {
-  width: 36px;
-  height: 36px;
-  border-radius: 10px;
-  background: var(--gradient);
+  width: 32px;
+  height: 32px;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  box-shadow: 0 6px 16px -4px rgba(58, 183, 255, 0.55);
-  transition: transform 0.3s var(--ease);
+  transition: transform var(--dur-base) var(--ease-emphasized);
 }
 
 .brand-mark-icon {
-  width: 62%;
-  height: 62%;
+  width: 100%;
+  height: 100%;
   display: block;
+  color: var(--text);
+  transition: color var(--dur-base) var(--ease-emphasized);
 }
 
 .brand:hover .brand-mark {
-  transform: scale(1.06);
+  transform: scale(1.08) rotate(-4deg);
+}
+
+.brand:hover .brand-mark-icon {
+  color: var(--primary);
 }
 
 .nav-links {
