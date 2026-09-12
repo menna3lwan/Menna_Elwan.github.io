@@ -9,6 +9,69 @@
   var prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   var canHover = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
 
+  /* ---------------- Shared eased scroll ----------------
+     One motion curve for every "jump to a place on the page" action --
+     nav clicks, hero CTAs, footer links and the back-to-top button --
+     so section-to-section navigation always feels like the same
+     deliberate, unified motion instead of a mix of browser defaults. */
+  function easeOutCubic(t) {
+    return 1 - Math.pow(1 - t, 3);
+  }
+
+  function smoothScrollTo(targetY) {
+    targetY = Math.max(0, targetY);
+    var startY = window.scrollY;
+    var distance = targetY - startY;
+
+    // Each frame below is an explicit, instant jump -- the easing comes
+    // entirely from our own rAF loop. Without "behavior: auto" here, the
+    // browser's own CSS `scroll-behavior: smooth` would try to animate
+    // every intermediate jump too, fighting our curve and causing jank.
+    if (prefersReducedMotion || Math.abs(distance) < 2) {
+      window.scrollTo({ top: targetY, behavior: "auto" });
+      return;
+    }
+
+    var duration = Math.min(900, Math.max(380, Math.abs(distance) * 0.5));
+    var start = null;
+
+    function step(timestamp) {
+      if (!start) start = timestamp;
+      var t = Math.min((timestamp - start) / duration, 1);
+      window.scrollTo({ top: startY + distance * easeOutCubic(t), behavior: "auto" });
+      if (t < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+
+  function initSmoothAnchorScroll() {
+    var navbar = document.querySelector(".navbar");
+
+    document.querySelectorAll('a[href^="#"]').forEach(function (link) {
+      var hash = link.getAttribute("href");
+      if (!hash || hash.length < 2) return;
+
+      link.addEventListener("click", function (e) {
+        var isTop = hash === "#top";
+        var target = isTop ? null : document.querySelector(hash);
+        if (!isTop && !target) return;
+
+        e.preventDefault();
+
+        var targetY;
+        if (isTop) {
+          targetY = 0;
+        } else {
+          var navHeight = navbar ? navbar.getBoundingClientRect().height : 0;
+          targetY = target.getBoundingClientRect().top + window.scrollY - navHeight - 12;
+        }
+
+        smoothScrollTo(targetY);
+        if (history.pushState) history.pushState(null, "", hash);
+      });
+    });
+  }
+
   /* ---------------- Theme toggle ---------------- */
   function initTheme() {
     var stored = localStorage.getItem("me-theme");
@@ -420,7 +483,7 @@
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     btn.addEventListener("click", function () {
-      window.scrollTo({ top: 0, behavior: prefersReducedMotion ? "auto" : "smooth" });
+      smoothScrollTo(0);
     });
   }
 
@@ -434,6 +497,7 @@
     initTheme();
     initScrollProgress();
     initNavbarScroll();
+    initSmoothAnchorScroll();
     initMobileNav();
     initNavIndicator();
     initScrollspy();

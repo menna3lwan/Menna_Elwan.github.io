@@ -186,6 +186,31 @@ section {
   }
 }
 
+/* Softens the seam between alternating section backgrounds so the page
+   reads as one continuous surface instead of stacked color blocks --
+   a small, purposeful touch toward "one integrated experience". */
+.section-alt {
+  background: var(--bg-soft);
+}
+.section-alt::before,
+.section-alt::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 140px;
+  z-index: -1;
+  pointer-events: none;
+}
+.section-alt::before {
+  top: 0;
+  background: linear-gradient(to bottom, var(--bg), transparent);
+}
+.section-alt::after {
+  bottom: 0;
+  background: linear-gradient(to top, var(--bg), transparent);
+}
+
 .section-head {
   max-width: 640px;
   margin: 0 0 56px;
