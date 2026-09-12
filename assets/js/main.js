@@ -7,6 +7,7 @@
 
   var root = document.documentElement;
   var prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var canHover = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
 
   /* ---------------- Theme toggle ---------------- */
   function initTheme() {
@@ -23,6 +24,30 @@
       root.setAttribute("data-theme", next);
       localStorage.setItem("me-theme", next);
     });
+  }
+
+  /* ---------------- Scroll progress bar ---------------- */
+  function initScrollProgress() {
+    var bar = document.querySelector(".scroll-progress__bar");
+    if (!bar) return;
+
+    var ticking = false;
+    function update() {
+      var scrollTop = window.scrollY;
+      var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      var pct = docHeight > 0 ? Math.min(scrollTop / docHeight, 1) : 0;
+      bar.style.transform = "scaleX(" + pct + ")";
+      ticking = false;
+    }
+    function onScroll() {
+      if (!ticking) {
+        requestAnimationFrame(update);
+        ticking = true;
+      }
+    }
+    update();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll);
   }
 
   /* ---------------- Navbar scroll state ---------------- */
@@ -57,6 +82,52 @@
     });
   }
 
+  /* ---------------- Nav sliding indicator ---------------- */
+  function initNavIndicator() {
+    var nav = document.querySelector(".nav-links");
+    var indicator = document.querySelector(".nav-indicator");
+    if (!nav || !indicator || !canHover) return;
+
+    var links = Array.prototype.slice.call(nav.querySelectorAll("a"));
+    var hovering = false;
+
+    function place(link) {
+      if (!link) {
+        indicator.style.opacity = "0";
+        return;
+      }
+      var navRect = nav.getBoundingClientRect();
+      var linkRect = link.getBoundingClientRect();
+      indicator.style.opacity = "1";
+      indicator.style.width = linkRect.width + "px";
+      indicator.style.transform = "translateX(" + (linkRect.left - navRect.left) + "px)";
+    }
+
+    function placeActive() {
+      if (hovering) return;
+      var active = nav.querySelector("a.active");
+      place(active);
+    }
+
+    links.forEach(function (link) {
+      link.addEventListener("mouseenter", function () {
+        hovering = true;
+        place(link);
+      });
+    });
+
+    nav.addEventListener("mouseleave", function () {
+      hovering = false;
+      placeActive();
+    });
+
+    window.addEventListener("resize", placeActive);
+
+    // Expose so scrollspy can nudge the indicator when the active link changes.
+    window.__meMoveNavIndicator = placeActive;
+    placeActive();
+  }
+
   /* ---------------- Scrollspy: highlight active nav link ---------------- */
   function initScrollspy() {
     var sections = Array.prototype.slice.call(document.querySelectorAll("main section[id]"));
@@ -78,6 +149,7 @@
           if (entry.isIntersecting) {
             navLinks.forEach(function (l) { l.classList.remove("active"); });
             link.classList.add("active");
+            if (window.__meMoveNavIndicator) window.__meMoveNavIndicator();
           }
         });
       },
@@ -204,16 +276,27 @@
     counters.forEach(function (el) { observer.observe(el); });
   }
 
-  /* ---------------- Project filters ---------------- */
+  /* ---------------- Project filters (with sliding pill indicator) ---------------- */
   function initProjectFilters() {
-    var buttons = document.querySelectorAll(".filter-btn");
+    var bar = document.querySelector(".filter-bar");
+    var buttons = Array.prototype.slice.call(document.querySelectorAll(".filter-btn"));
     var cards = document.querySelectorAll("[data-category]");
+    var indicator = document.querySelector(".filter-indicator");
     if (!buttons.length || !cards.length) return;
+
+    function placeIndicator(btn) {
+      if (!indicator || !bar || !btn) return;
+      var barRect = bar.getBoundingClientRect();
+      var btnRect = btn.getBoundingClientRect();
+      indicator.style.width = btnRect.width + "px";
+      indicator.style.transform = "translateX(" + (btnRect.left - barRect.left) + "px)";
+    }
 
     buttons.forEach(function (btn) {
       btn.addEventListener("click", function () {
         buttons.forEach(function (b) { b.classList.remove("active"); });
         btn.classList.add("active");
+        placeIndicator(btn);
         var filter = btn.getAttribute("data-filter");
 
         cards.forEach(function (card) {
@@ -222,6 +305,71 @@
           card.style.display = show ? "" : "none";
         });
       });
+    });
+
+    var initial = bar ? bar.querySelector(".filter-btn.active") : null;
+    if (initial) placeIndicator(initial);
+    window.addEventListener("resize", function () {
+      var active = bar.querySelector(".filter-btn.active");
+      if (active) placeIndicator(active);
+    });
+  }
+
+  /* ---------------- Project card tilt + cursor glow ---------------- */
+  function initProjectTilt() {
+    if (!canHover || prefersReducedMotion) return;
+
+    var cards = document.querySelectorAll(".project-card");
+    cards.forEach(function (card) {
+      card.classList.add("can-tilt");
+      var rafId = null;
+      var rect = null;
+
+      card.addEventListener("pointerenter", function () {
+        rect = card.getBoundingClientRect();
+      });
+
+      card.addEventListener("pointermove", function (e) {
+        if (rafId) return;
+        rafId = requestAnimationFrame(function () {
+          rafId = null;
+          if (!rect) rect = card.getBoundingClientRect();
+          var px = (e.clientX - rect.left) / rect.width;
+          var py = (e.clientY - rect.top) / rect.height;
+          var rotateY = (px - 0.5) * 8;
+          var rotateX = (0.5 - py) * 8;
+          card.style.transform =
+            "translateY(-8px) perspective(900px) rotateX(" + rotateX + "deg) rotateY(" + rotateY + "deg)";
+          card.style.setProperty("--mx", px * 100 + "%");
+          card.style.setProperty("--my", py * 100 + "%");
+        });
+      });
+
+      card.addEventListener("pointerleave", function () {
+        if (rafId) {
+          cancelAnimationFrame(rafId);
+          rafId = null;
+        }
+        card.style.transform = "";
+      });
+    });
+  }
+
+  /* ---------------- Fade in project images once loaded ---------------- */
+  function initImageFade() {
+    var medias = document.querySelectorAll(".project-media:not(.no-image)");
+    medias.forEach(function (media) {
+      var img = media.querySelector("img");
+      if (!img) return;
+      function markLoaded() {
+        media.classList.add("is-loaded");
+      }
+      if (img.complete && img.naturalWidth > 0) {
+        markLoaded();
+      } else {
+        img.addEventListener("load", markLoaded);
+        img.addEventListener("error", markLoaded);
+      }
     });
   }
 
@@ -247,13 +395,17 @@
 
   document.addEventListener("DOMContentLoaded", function () {
     initTheme();
+    initScrollProgress();
     initNavbarScroll();
     initMobileNav();
+    initNavIndicator();
     initScrollspy();
     initReveal();
     initTypewriter();
     initCounters();
     initProjectFilters();
+    initProjectTilt();
+    initImageFade();
     initBackToTop();
     initYear();
   });

@@ -114,6 +114,12 @@ h1, h2, h3, h4 {
   color: #ffffff;
 }
 
+:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
@@ -124,6 +130,26 @@ h1, h2, h3, h4 {
     transition-duration: 0.001ms !important;
     scroll-behavior: auto !important;
   }
+}
+
+/* ---------- 2b. Scroll progress ---------- */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  z-index: 600;
+  background: transparent;
+  pointer-events: none;
+}
+.scroll-progress__bar {
+  height: 100%;
+  width: 100%;
+  background: var(--gradient);
+  transform: scaleX(0);
+  transform-origin: 0 50%;
+  will-change: transform;
 }
 
 /* ---------- 3. Layout helpers ---------- */
@@ -156,7 +182,7 @@ section {
   gap: 8px;
   font-size: 0.8rem;
   font-weight: 600;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--primary);
   margin-bottom: 14px;
@@ -168,16 +194,26 @@ section {
   height: 2px;
   background: var(--gradient);
   border-radius: 2px;
+  transform: scaleX(0);
+  transform-origin: 0 50%;
+  transition: transform 0.6s var(--ease) 0.1s;
+}
+
+[data-reveal].is-visible .section-eyebrow::before {
+  transform: scaleX(1);
 }
 
 .section-head h2 {
-  font-size: clamp(1.9rem, 3.2vw, 2.5rem);
-  margin-bottom: 14px;
+  font-size: clamp(1.95rem, 3.2vw, 2.55rem);
+  line-height: 1.15;
+  margin-bottom: 16px;
+  letter-spacing: -0.025em;
 }
 
 .section-head p {
   color: var(--text-muted);
   font-size: 1.05rem;
+  line-height: 1.65;
 }
 
 .section-head.center {
@@ -197,6 +233,7 @@ section {
 
 /* ---------- 4. Buttons ---------- */
 .btn {
+  position: relative;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -205,14 +242,47 @@ section {
   border-radius: 999px;
   font-weight: 600;
   font-size: 0.95rem;
+  overflow: hidden;
+  isolation: isolate;
   transition: transform 0.35s var(--ease), box-shadow 0.35s var(--ease), background 0.35s var(--ease), border-color 0.35s var(--ease);
   white-space: nowrap;
 }
 
+.btn::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(115deg, transparent 30%, rgba(255, 255, 255, 0.35) 48%, transparent 66%);
+  transform: translateX(-120%);
+  transition: transform 0.7s var(--ease);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.btn:hover::before {
+  transform: translateX(120%);
+}
+
+.btn:active {
+  transform: scale(0.97);
+}
+
 .btn svg {
+  position: relative;
+  z-index: 2;
   width: 18px;
   height: 18px;
   flex-shrink: 0;
+  transition: transform 0.35s var(--ease);
+}
+
+.btn > :not(svg) {
+  position: relative;
+  z-index: 2;
+}
+
+.btn:hover svg {
+  transform: translateX(2px);
 }
 
 .btn-primary {
@@ -225,6 +295,9 @@ section {
   transform: translateY(-3px);
   box-shadow: 0 18px 34px -8px rgba(58, 183, 255, 0.6);
 }
+.btn-primary:active {
+  transform: scale(0.97);
+}
 
 .btn-outline {
   background: transparent;
@@ -236,6 +309,9 @@ section {
   border-color: var(--primary);
   transform: translateY(-3px);
   background: var(--gradient-soft);
+}
+.btn-outline:active {
+  transform: scale(0.97);
 }
 
 .btn-ghost {
@@ -304,9 +380,24 @@ section {
 }
 
 .nav-links {
+  position: relative;
   display: flex;
   align-items: center;
   gap: 34px;
+}
+
+.nav-indicator {
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  height: 2px;
+  width: 0;
+  background: var(--gradient);
+  border-radius: 2px;
+  transform: translateX(0);
+  transition: transform 0.45s var(--ease), width 0.45s var(--ease), opacity 0.3s var(--ease);
+  opacity: 0;
+  pointer-events: none;
 }
 
 .nav-links a {
@@ -318,25 +409,28 @@ section {
   transition: color 0.25s var(--ease);
 }
 
-.nav-links a::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -2px;
-  width: 0;
-  height: 2px;
-  background: var(--gradient);
-  border-radius: 2px;
-  transition: width 0.3s var(--ease);
-}
-
 .nav-links a:hover,
 .nav-links a.active {
   color: var(--text);
 }
-.nav-links a.active::after,
-.nav-links a:hover::after {
-  width: 100%;
+
+@media (max-width: 900px) {
+  .nav-indicator { display: none; }
+  .nav-links a.active {
+    color: var(--primary);
+    padding-left: 14px;
+  }
+  .nav-links a.active::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--gradient);
+  }
 }
 
 .nav-actions {
@@ -431,7 +525,21 @@ section {
   .nav-links a {
     width: 100%;
     padding: 12px 0;
+    opacity: 0;
+    transform: translateX(-10px);
+    transition: opacity 0.35s var(--ease), transform 0.35s var(--ease), color 0.25s var(--ease);
   }
+  .nav-links.is-open a {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  .nav-links.is-open a:nth-child(1) { transition-delay: 0.04s; }
+  .nav-links.is-open a:nth-child(2) { transition-delay: 0.08s; }
+  .nav-links.is-open a:nth-child(3) { transition-delay: 0.12s; }
+  .nav-links.is-open a:nth-child(4) { transition-delay: 0.16s; }
+  .nav-links.is-open a:nth-child(5) { transition-delay: 0.2s; }
+  .nav-links.is-open a:nth-child(6) { transition-delay: 0.24s; }
+  .nav-links.is-open a:nth-child(7) { transition-delay: 0.28s; }
   .nav-toggle { display: flex; }
 }
 
@@ -1031,24 +1139,42 @@ section {
 
 /* ---------- 11. Projects ---------- */
 .filter-bar {
+  position: relative;
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
   margin-bottom: 40px;
 }
 
+.filter-indicator {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0;
+  border-radius: 999px;
+  background: var(--gradient);
+  transform: translateX(0);
+  transition: transform 0.45s var(--ease), width 0.45s var(--ease);
+  z-index: 0;
+  pointer-events: none;
+}
+
 .filter-btn {
+  position: relative;
+  z-index: 1;
   padding: 9px 18px;
   border-radius: 999px;
   font-size: 0.85rem;
   font-weight: 600;
   border: 1px solid var(--border);
   color: var(--text-muted);
-  transition: all 0.3s var(--ease);
+  background: transparent;
+  transition: color 0.3s var(--ease), border-color 0.3s var(--ease), transform 0.2s var(--ease);
 }
 .filter-btn:hover { color: var(--text); border-color: var(--border-strong); }
+.filter-btn:active { transform: scale(0.96); }
 .filter-btn.active {
-  background: var(--gradient);
   color: #fff;
   border-color: transparent;
 }
@@ -1060,18 +1186,43 @@ section {
 }
 
 .project-card {
+  position: relative;
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  transition: transform 0.4s var(--ease), border-color 0.4s var(--ease), box-shadow 0.4s var(--ease);
+  transform: translateY(0);
+  transition: transform 0.45s var(--ease), border-color 0.4s var(--ease), box-shadow 0.4s var(--ease);
+  will-change: transform;
 }
 .project-card:hover {
-  transform: translateY(-8px);
   border-color: var(--border-strong);
   box-shadow: var(--shadow-lg);
+}
+.project-card.can-tilt {
+  transition: border-color 0.4s var(--ease), box-shadow 0.4s var(--ease), transform 0.15s linear;
+}
+.project-card.can-tilt:not(:hover) {
+  transition: border-color 0.4s var(--ease), box-shadow 0.4s var(--ease), transform 0.5s var(--ease);
+}
+.project-card:not(.can-tilt):hover {
+  transform: translateY(-8px);
+}
+
+.project-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at var(--mx, 50%) var(--my, 30%), rgba(255, 255, 255, 0.12), transparent 55%);
+  opacity: 0;
+  transition: opacity 0.4s var(--ease);
+  pointer-events: none;
+  z-index: 5;
+}
+.project-card:hover::after {
+  opacity: 1;
 }
 
 .project-media {
@@ -1081,12 +1232,35 @@ section {
   background: var(--gradient-soft);
 }
 
+.project-media:not(.no-image)::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(100deg, var(--surface-2) 30%, var(--border-strong) 45%, var(--surface-2) 60%);
+  background-size: 200% 100%;
+  animation: shimmer 1.6s ease-in-out infinite;
+  opacity: 1;
+  transition: opacity 0.4s var(--ease);
+}
+.project-media.is-loaded::before {
+  opacity: 0;
+}
+
+@keyframes shimmer {
+  0% { background-position: 150% 0; }
+  100% { background-position: -50% 0; }
+}
+
 .project-media img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: top center;
-  transition: transform 0.6s var(--ease);
+  opacity: 0;
+  transition: transform 0.6s var(--ease), opacity 0.5s var(--ease);
+}
+.project-media.is-loaded img {
+  opacity: 1;
 }
 .project-card:hover .project-media img {
   transform: scale(1.06);
@@ -1099,10 +1273,11 @@ section {
 }
 .project-media.no-image .glyph {
   font-family: var(--font-head);
-  font-size: 2.6rem;
+  font-size: 1.9rem;
   font-weight: 800;
+  letter-spacing: 0.02em;
   color: var(--text);
-  opacity: 0.85;
+  opacity: 0.9;
 }
 
 .project-status {
