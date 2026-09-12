@@ -355,6 +355,43 @@
     });
   }
 
+  /* ---------------- Tap ripple (Material/Flutter-style ink response) ---------------- */
+  function initRipple() {
+    if (prefersReducedMotion) return;
+    var selector = ".btn, .filter-btn, .social-btn";
+
+    document.addEventListener(
+      "pointerdown",
+      function (e) {
+        if (e.button !== undefined && e.button !== 0) return;
+        var target = e.target.closest ? e.target.closest(selector) : null;
+        if (!target) return;
+
+        var rect = target.getBoundingClientRect();
+        var size = Math.max(rect.width, rect.height) * 1.8;
+        var x = e.clientX - rect.left - size / 2;
+        var y = e.clientY - rect.top - size / 2;
+
+        var ripple = document.createElement("span");
+        ripple.className = "ink-ripple";
+        ripple.style.width = size + "px";
+        ripple.style.height = size + "px";
+        ripple.style.left = x + "px";
+        ripple.style.top = y + "px";
+        target.appendChild(ripple);
+
+        ripple.addEventListener("animationend", function () {
+          ripple.remove();
+        });
+        // Safety net in case animationend doesn't fire (e.g. element removed).
+        setTimeout(function () {
+          if (ripple.parentNode) ripple.remove();
+        }, 900);
+      },
+      { passive: true }
+    );
+  }
+
   /* ---------------- Fade in project images once loaded ---------------- */
   function initImageFade() {
     var medias = document.querySelectorAll(".project-media:not(.no-image)");
@@ -405,6 +442,7 @@
     initCounters();
     initProjectFilters();
     initProjectTilt();
+    initRipple();
     initImageFade();
     initBackToTop();
     initYear();

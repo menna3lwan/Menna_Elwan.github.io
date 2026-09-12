@@ -30,8 +30,10 @@
   --radius: 14px;
   --radius-lg: 22px;
 
+  --shadow-sm: 0 4px 14px -6px rgba(0, 0, 0, 0.35);
   --shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.45);
   --shadow-lg: 0 20px 60px -15px rgba(0, 0, 0, 0.55);
+  --shadow-xl: 0 30px 70px -20px rgba(0, 0, 0, 0.6);
 
   --font-head: "Sora", "Inter", system-ui, sans-serif;
   --font-body: "Inter", system-ui, -apple-system, sans-serif;
@@ -39,7 +41,15 @@
   --container: 1180px;
   --nav-height: 76px;
 
+  /* Motion system: a calm "standard" curve for everyday transitions, and a
+     livelier "emphasized" curve (decelerate-style, in the spirit of the
+     motion curves Flutter's Material widgets ship with) for entrances and
+     tactile feedback -- fast in, gentle settle, never bouncy or slow. */
   --ease: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-emphasized: cubic-bezier(0.2, 0, 0, 1);
+  --dur-fast: 0.18s;
+  --dur-base: 0.32s;
+  --dur-slow: 0.55s;
 }
 
 [data-theme="light"] {
@@ -107,6 +117,11 @@ h1, h2, h3, h4 {
   font-weight: 700;
   line-height: 1.2;
   letter-spacing: -0.02em;
+  text-wrap: balance;
+}
+
+p {
+  text-wrap: pretty;
 }
 
 ::selection {
@@ -327,6 +342,31 @@ section {
 .btn-sm {
   padding: 9px 16px;
   font-size: 0.85rem;
+}
+
+/* ---------- 4b. Tap ripple (InkWell-style tactile feedback) ---------- */
+/* A quiet nod to Flutter's Material ink-response: a brief, purposeful burst
+   of feedback exactly where the user pressed. Never decorative on its own —
+   it only appears in direct response to a press, and never on cards that
+   don't perform an action. */
+.ink-ripple {
+  position: absolute;
+  border-radius: 50%;
+  background: currentColor;
+  opacity: 0.32;
+  transform: scale(0);
+  pointer-events: none;
+  z-index: 3;
+  animation: ink-ripple-expand 0.62s var(--ease-emphasized) forwards;
+}
+@keyframes ink-ripple-expand {
+  to {
+    transform: scale(1);
+    opacity: 0;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ink-ripple { display: none; }
 }
 
 /* ---------- 5. Navbar ---------- */
@@ -706,6 +746,9 @@ section {
 }
 
 .social-btn {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
   width: 42px;
   height: 42px;
   border-radius: 50%;
@@ -777,7 +820,7 @@ section {
   border-radius: 999px;
   background: var(--surface);
   border: 1px solid var(--border);
-  box-shadow: var(--shadow);
+  box-shadow: var(--shadow-sm);
   font-size: 0.82rem;
   font-weight: 600;
   z-index: 2;
@@ -845,12 +888,15 @@ section {
 /* ---------- 7. Reveal-on-scroll ---------- */
 [data-reveal] {
   opacity: 0;
-  transform: translateY(28px);
-  transition: opacity 0.7s var(--ease), transform 0.7s var(--ease);
+  transform: translateY(22px) scale(0.982);
+  transition: opacity 0.62s var(--ease-emphasized), transform 0.62s var(--ease-emphasized);
+}
+[data-reveal]:not(.is-visible) {
+  will-change: opacity, transform;
 }
 [data-reveal].is-visible {
   opacity: 1;
-  transform: translateY(0);
+  transform: translateY(0) scale(1);
 }
 [data-reveal-delay="1"] { transition-delay: 0.08s; }
 [data-reveal-delay="2"] { transition-delay: 0.16s; }
@@ -935,11 +981,15 @@ section {
   border-radius: var(--radius);
   padding: 22px 18px;
   text-align: center;
-  transition: transform 0.35s var(--ease), border-color 0.35s var(--ease);
+  transition: transform var(--dur-base) var(--ease), border-color var(--dur-base) var(--ease), box-shadow var(--dur-base) var(--ease);
 }
 .stat-card:hover {
   transform: translateY(-6px);
   border-color: var(--primary);
+  box-shadow: var(--shadow);
+}
+.stat-card:active {
+  transform: translateY(-6px) scale(0.98);
 }
 
 .stat-num {
@@ -985,6 +1035,9 @@ section {
   transform: translateY(-6px);
   border-color: var(--border-strong);
   box-shadow: var(--shadow);
+}
+.skill-card:active {
+  transform: translateY(-6px) scale(0.99);
 }
 
 .skill-card .skill-icon {
@@ -1074,11 +1127,15 @@ section {
   border: 1px solid var(--border);
   border-radius: var(--radius);
   padding: 22px 24px;
-  transition: border-color 0.3s var(--ease), transform 0.3s var(--ease);
+  transition: border-color var(--dur-base) var(--ease), transform var(--dur-base) var(--ease), box-shadow var(--dur-base) var(--ease);
 }
 .timeline-card:hover {
   border-color: var(--border-strong);
   transform: translateX(4px);
+  box-shadow: var(--shadow);
+}
+.timeline-card:active {
+  transform: translateX(4px) scale(0.995);
 }
 
 .timeline-top {
@@ -1172,6 +1229,8 @@ section {
 .filter-btn {
   position: relative;
   z-index: 1;
+  overflow: hidden;
+  isolation: isolate;
   padding: 9px 18px;
   border-radius: 999px;
   font-size: 0.85rem;
@@ -1210,6 +1269,9 @@ section {
   border-color: var(--border-strong);
   box-shadow: var(--shadow-lg);
 }
+.project-card.can-tilt:hover {
+  box-shadow: var(--shadow-xl);
+}
 .project-card.can-tilt {
   transition: border-color 0.4s var(--ease), box-shadow 0.4s var(--ease), transform 0.15s linear;
 }
@@ -1218,6 +1280,9 @@ section {
 }
 .project-card:not(.can-tilt):hover {
   transform: translateY(-8px);
+}
+.project-card:not(.can-tilt):active {
+  transform: translateY(-8px) scale(0.99);
 }
 
 .project-card::after {
@@ -1373,6 +1438,15 @@ section {
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
   padding: 34px;
+  transition: transform var(--dur-base) var(--ease), border-color var(--dur-base) var(--ease), box-shadow var(--dur-base) var(--ease);
+}
+.oss-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--border-strong);
+  box-shadow: var(--shadow-lg);
+}
+.oss-card:active {
+  transform: translateY(-4px) scale(0.99);
 }
 
 .oss-icon {
@@ -1428,6 +1502,15 @@ section {
   padding: 26px;
   display: flex;
   gap: 18px;
+  transition: transform var(--dur-base) var(--ease), border-color var(--dur-base) var(--ease), box-shadow var(--dur-base) var(--ease);
+}
+.edu-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--border-strong);
+  box-shadow: var(--shadow);
+}
+.edu-card:active {
+  transform: translateY(-6px) scale(0.99);
 }
 
 .edu-card .edu-icon {
