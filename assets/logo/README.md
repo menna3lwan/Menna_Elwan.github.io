@@ -1,69 +1,56 @@
-# Menna Elwan — Personal Monogram
+# Menna Elwan — Logo Kit (v2: "Fused Ascender")
 
-A from-scratch redesign of the personal brand mark, built to replace the earlier
-"M + ع" gradient-tile logo. This version drops the container entirely: the mark
-is a single flat shape on a fully transparent canvas — no background, no
-gradients, no shadows, no decorative effects.
+## Concept
 
-## Concept: "Carved Valley"
+The mark merges the Latin letter **M** with the Arabic letter **ع** (ain),
+written in **Ruq'ah (خط الرقعة)** calligraphy — sourced from the Aref Ruqaa
+typeface, a dedicated Ruq'ah-style Arabic font, deliberately distinct from
+the Naskh style used in earlier drafts.
 
-The mark is a bold letter **M** with the Arabic letter **ع (ain)** — drawn in a
-simplified, modern take on Naskh calligraphy (a rounded counter/loop flowing
-into a swooping tail) — **carved into it as a single continuous negative-space
-cut**, rather than two letters placed side by side or overlaid as separate
-colors. Read it as "M", then look again and find "ع" living inside it: one
-personal monogram, not two adjacent letterforms.
+The two letters are not placed side by side or carved as a separate hole —
+the entire mark is built from **one continuous stroke**. Starting at the
+M's left foot, the line climbs to the left peak, drops into the valley,
+then instead of rising straight to a plain right-hand point, it curls
+through the ع's Ruq'ah hook (open counter and all) on its way up to the
+right peak. The ع is literally one of the M's own strokes, not an
+add-on — reflecting the merge of "M" (Menna) and "ع" (the first letter of
+علوان / Elwan).
 
-- **No background** — the SVG/PNG files contain only the ink shape; the canvas
-  is fully transparent. Any light/dark tiles shown in `previews/` are preview
-  mockups only, not part of the delivered files.
-- **No gradients/effects/shadows** — pure flat single-color construction.
-- **ع stays recognizable** as a Naskh letterform (loop + counter + tail) even
-  merged into the M.
-- **Subtle Flutter/tech nod** — the outer silhouette uses a small, consistent
-  corner-rounding (a quiet nod to modern, geometric, Material-adjacent design
-  language) without touching the Flutter logo or its colors in any way.
-- **Icon-only** — works as a standalone monogram, no wordmark required.
-
-Three alternative merge concepts were explored before this direction was
-chosen — see `previews/concepts-contact-sheet.png` (carved hole vs. an
-escaping-tail flourish vs. an additive fused loop) and
-`previews/light-dark-test.png` / `previews/size-legibility-test.png` for the
-visibility/legibility testing that informed the final construction (including
-why a separate, bolder favicon-specific variant exists — see below).
+The outer M keeps crisp, mitred, geometric corners (the "modern/tech" half
+of the identity); the ع portion is the only part of the mark allowed to
+flow and curve (the "classic/calligraphic" half) — one shape, two
+readings, deliberately balanced rather than decorative.
 
 ## Files
 
-```
-svg/
-  menna-monogram-black.svg        primary mark, dark ink       — portfolio, GitHub, CV, print
-  menna-monogram-white.svg        primary mark, light ink      — dark surfaces, social banners
-  menna-monogram-currentColor.svg primary mark, fill="currentColor" — inline embedding (navbar, HTML)
-  menna-favicon.svg               favicon-optimized shape, auto light/dark via prefers-color-scheme
-  menna-favicon-black.svg         favicon-optimized shape, static dark ink
+- `svg/menna-monogram-{black,white,currentColor}.svg` — the icon-only mark.
+  `currentColor` is used for the site navbar so it follows the active
+  theme automatically.
+- `svg/menna-primary-logo-{black,white}.svg` — the primary lockup: mark +
+  "Menna Elwan" wordmark + "Flutter Developer" subline.
+- `svg/menna-favicon.svg` — favicon build with an embedded
+  `prefers-color-scheme` rule so it auto-inverts on dark browser UIs.
+- `svg/menna-favicon-black.svg` — same favicon-safe mark, fixed dark fill.
+- `png/menna-monogram-{black,white}-{128,256,512,1024,2048}.png` —
+  transparent monogram rasters.
+- `png/menna-favicon-{16,32,48,64,180,192,512}.png` — transparent favicon
+  and touch-icon rasters.
+- `png/menna-primary-logo-{black,white}.png` — transparent primary-logo
+  raster.
+- `source/menna-monogram.pdf`, `source/menna-primary-logo.pdf` — vector
+  editable source files (open in Illustrator / Figma / Inkscape / Affinity
+  Designer to adjust the outline directly).
+- `previews/light-dark-size-test.png` — verification sheet: monogram and
+  favicon mark on light and dark backgrounds at 256/64/32/16px.
 
-png/  (all transparent backgrounds)
-  menna-monogram-black-{128,256,512,1024,2048}.png
-  menna-monogram-white-{128,256,512,1024,2048}.png
-  menna-favicon-{16,32,48,64,180,192,512}.png
+## Design notes
 
-source/
-  menna-monogram.pdf              vector editable source (Illustrator / Figma / Inkscape)
-  (the SVGs themselves are also fully editable vector source)
-
-previews/
-  concepts-contact-sheet.png      the 3 concepts explored, at 1024/64/32/16px
-  light-dark-test.png             visibility test on light + dark preview tiles
-  size-legibility-test.png        final mark at 1024/64/32/16px
-  favicon-size-test.png           favicon-optimized variant at 64/32/16px
-```
-
-## Why two shapes (primary vs. favicon)?
-
-At full size the carved ع detail (loop + tail) reads clearly. At true favicon
-scale (16–32px) that fine detail naturally softens — a universal limitation of
-fine negative-space at tiny pixel grids, not specific to this design. Rather
-than compromise the primary mark's detail, `menna-favicon*` is a bolder,
-simplified variant of the same construction (a rounder, chunkier cut) tuned
-specifically to stay crisp at 16–32px. Everywhere else — website, GitHub,
-LinkedIn, CV, social profiles — use the primary `menna-monogram-*` mark.
+- All files are fully transparent — no background baked in.
+- The favicon mark uses a slightly bolder stroke and a more open counter
+  than the primary mark, because the finer counter of the primary mark
+  starts to lose definition below ~32px. Below ~16px the ع's open counter
+  reduces to a simple bold "M" silhouette — a deliberate, considered
+  fallback rather than a compromise on the primary mark's detail.
+- Corner treatment: crisp/mitred on the outer M, softened with a small
+  fillet pass (`buffer(-r).buffer(r)`) for a refined, non-razor edge; the
+  ع hook keeps its natural calligraphic curve throughout.
