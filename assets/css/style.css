@@ -4,38 +4,42 @@
    ========================================================================== */
 
 /* ---------- 1. Design tokens ---------- */
+/* "Classic Modern" identity, built to match the M+ain logo mark: a near-
+   monochrome ink/paper base with a single restrained accent, a serif for
+   display type (the mark's "classic" half) paired with a clean geometric
+   sans for body/UI (the mark's "modern" half). */
 :root {
-  /* Palette (dark, Flutter-inspired blue/teal + violet accent) */
-  --bg: #0a0e17;
-  --bg-soft: #0d1220;
-  --surface: #121729;
-  --surface-2: #161c33;
-  --border: rgba(255, 255, 255, 0.08);
-  --border-strong: rgba(255, 255, 255, 0.14);
+  /* Palette: ink (dark) on paper (light text), one ink-blue accent family */
+  --bg: #0c0d10;
+  --bg-soft: #101115;
+  --surface: #15161b;
+  --surface-2: #1b1c22;
+  --border: rgba(255, 255, 255, 0.09);
+  --border-strong: rgba(255, 255, 255, 0.16);
 
-  --text: #eef1f8;
-  --text-muted: #9aa4bd;
-  --text-faint: #6b7690;
+  --text: #f3f1ec;
+  --text-muted: #a6a29a;
+  --text-faint: #6f6b64;
 
-  --primary: #3ab7ff;
-  --primary-2: #7c6bff;
-  --accent: #35e3c0;
+  --primary: #3f63e0;
+  --primary-2: #1c3494;
+  --accent: #7793ee;
   --gradient: linear-gradient(135deg, var(--primary) 0%, var(--primary-2) 100%);
-  --gradient-soft: linear-gradient(135deg, rgba(58, 183, 255, 0.15), rgba(124, 107, 255, 0.15));
+  --gradient-soft: linear-gradient(135deg, rgba(63, 99, 224, 0.14), rgba(28, 52, 148, 0.14));
 
-  --success: #35e3c0;
-  --warn: #ffb84f;
+  --success: #6ea777;
+  --warn: #d9a24f;
 
-  --radius-sm: 8px;
-  --radius: 14px;
-  --radius-lg: 22px;
+  --radius-sm: 7px;
+  --radius: 12px;
+  --radius-lg: 18px;
 
   --shadow-sm: 0 4px 14px -6px rgba(0, 0, 0, 0.35);
   --shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.45);
   --shadow-lg: 0 20px 60px -15px rgba(0, 0, 0, 0.55);
   --shadow-xl: 0 30px 70px -20px rgba(0, 0, 0, 0.6);
 
-  --font-head: "Sora", "Inter", system-ui, sans-serif;
+  --font-head: "Newsreader", Georgia, "Times New Roman", serif;
   --font-body: "Inter", system-ui, -apple-system, sans-serif;
 
   --container: 1180px;
@@ -53,19 +57,19 @@
 }
 
 [data-theme="light"] {
-  --bg: #f6f8fc;
-  --bg-soft: #eef1f8;
+  --bg: #faf8f3;
+  --bg-soft: #f3f0e8;
   --surface: #ffffff;
-  --surface-2: #f2f4fa;
-  --border: rgba(10, 14, 23, 0.08);
-  --border-strong: rgba(10, 14, 23, 0.14);
+  --surface-2: #f5f2ea;
+  --border: rgba(19, 18, 14, 0.08);
+  --border-strong: rgba(19, 18, 14, 0.15);
 
-  --text: #10131c;
-  --text-muted: #4b5468;
-  --text-faint: #7a8398;
+  --text: #16150f;
+  --text-muted: #58544c;
+  --text-faint: #858075;
 
-  --shadow: 0 10px 30px -12px rgba(20, 30, 60, 0.18);
-  --shadow-lg: 0 20px 50px -15px rgba(20, 30, 60, 0.22);
+  --shadow: 0 10px 30px -12px rgba(30, 26, 15, 0.14);
+  --shadow-lg: 0 20px 50px -15px rgba(30, 26, 15, 0.18);
 }
 
 /* ---------- 2. Reset ---------- */
@@ -114,9 +118,9 @@ button {
 
 h1, h2, h3, h4 {
   font-family: var(--font-head);
-  font-weight: 700;
-  line-height: 1.2;
-  letter-spacing: -0.02em;
+  font-weight: 600;
+  line-height: 1.18;
+  letter-spacing: -0.01em;
   text-wrap: balance;
 }
 
@@ -328,12 +332,12 @@ section {
 .btn-primary {
   background: var(--gradient);
   color: #ffffff;
-  box-shadow: 0 12px 28px -8px rgba(58, 183, 255, 0.5);
+  box-shadow: 0 12px 28px -8px rgba(63, 99, 224, 0.45);
 }
 
 .btn-primary:hover {
   transform: translateY(-3px);
-  box-shadow: 0 18px 34px -8px rgba(58, 183, 255, 0.6);
+  box-shadow: 0 18px 34px -8px rgba(63, 99, 224, 0.55);
 }
 .btn-primary:active {
   transform: scale(0.97);
@@ -638,37 +642,32 @@ section {
   pointer-events: none;
 }
 
+/* A single calm ambient glow rather than a cluster of colorful floating
+   blobs -- restrained, in the same ink-blue accent family as the mark,
+   moving slowly and barely, never competing with the type. */
 .hero-bg .blob {
   position: absolute;
   border-radius: 50%;
-  filter: blur(70px);
-  opacity: 0.35;
-  animation: float-blob 18s ease-in-out infinite;
+  filter: blur(90px);
+  opacity: 0.16;
+  animation: float-blob 26s ease-in-out infinite;
 }
-[data-theme="light"] .hero-bg .blob { opacity: 0.28; }
+[data-theme="light"] .hero-bg .blob { opacity: 0.12; }
 
 .blob-a {
-  width: 460px;
-  height: 460px;
+  width: 480px;
+  height: 480px;
   background: var(--primary);
-  top: -120px;
-  right: -80px;
+  top: -140px;
+  right: -100px;
 }
 .blob-b {
-  width: 380px;
-  height: 380px;
+  width: 360px;
+  height: 360px;
   background: var(--primary-2);
-  bottom: -100px;
-  left: -100px;
-  animation-delay: -6s;
-}
-.blob-c {
-  width: 260px;
-  height: 260px;
-  background: var(--accent);
-  top: 40%;
-  left: 45%;
-  animation-delay: -11s;
+  bottom: -120px;
+  left: -120px;
+  animation-delay: -10s;
 }
 
 .hero-bg .grid-overlay {
@@ -677,15 +676,36 @@ section {
   background-image:
     linear-gradient(var(--border) 1px, transparent 1px),
     linear-gradient(90deg, var(--border) 1px, transparent 1px);
-  background-size: 44px 44px;
-  mask-image: radial-gradient(circle at 70% 20%, black, transparent 65%);
-  opacity: 0.5;
+  background-size: 48px 48px;
+  mask-image: radial-gradient(circle at 70% 20%, black, transparent 60%);
+  opacity: 0.35;
 }
 
 @keyframes float-blob {
   0%, 100% { transform: translate(0, 0) scale(1); }
-  33% { transform: translate(30px, -30px) scale(1.08); }
-  66% { transform: translate(-20px, 20px) scale(0.95); }
+  50% { transform: translate(18px, -18px) scale(1.04); }
+}
+
+/* The logo mark itself, reused as a very quiet watermark -- ties the hero
+   back to the brand mark without competing with the actual content. */
+.hero-mark-watermark {
+  position: absolute;
+  right: -70px;
+  bottom: -90px;
+  width: 440px;
+  height: 440px;
+  background-color: var(--text);
+  opacity: 0.045;
+  -webkit-mask-image: url("../logo/svg/menna-monogram-currentColor.svg");
+  mask-image: url("../logo/svg/menna-monogram-currentColor.svg");
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  pointer-events: none;
+}
+@media (max-width: 900px) {
+  .hero-mark-watermark { display: none; }
 }
 
 .hero .container {
@@ -712,15 +732,15 @@ section {
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: var(--accent);
-  box-shadow: 0 0 0 0 rgba(53, 227, 192, 0.6);
+  background: var(--primary);
+  box-shadow: 0 0 0 0 rgba(63, 99, 224, 0.6);
   animation: pulse-dot 2.2s infinite;
 }
 
 @keyframes pulse-dot {
-  0% { box-shadow: 0 0 0 0 rgba(53, 227, 192, 0.55); }
-  70% { box-shadow: 0 0 0 8px rgba(53, 227, 192, 0); }
-  100% { box-shadow: 0 0 0 0 rgba(53, 227, 192, 0); }
+  0% { box-shadow: 0 0 0 0 rgba(63, 99, 224, 0.5); }
+  70% { box-shadow: 0 0 0 8px rgba(63, 99, 224, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(63, 99, 224, 0); }
 }
 
 .hero h1 {
